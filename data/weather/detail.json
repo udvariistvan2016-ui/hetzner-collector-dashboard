@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "id": "weather",
+  "updated_at": "2026-08-27T08:22:14Z",
+  "timezone": "Europe/Budapest",
+  "counts": {
+    "forecast_n": 18420,
+    "obs_n": 2104,
+    "daily_n": 86,
+    "n_locations": 4
+  },
+  "locations": [
+    {
+      "id": "budaors",
+      "name": "Budaörs",
+      "kind": "interest",
+      "last_forecast": "2026-08-27T06:03:11Z",
+      "last_obs": null,
+      "forecast_rows": 2410,
+      "obs_rows": 0,
+      "last_error": null
+    },
+    {
+      "id": "balatonalmadi",
+      "name": "Balatonalmádi",
+      "kind": "interest",
+      "last_forecast": "2026-08-27T06:03:11Z",
+      "last_obs": null,
+      "forecast_rows": 2388,
+      "obs_rows": 0,
+      "last_error": null
+    },
+    {
+      "id": "lagymanyos",
+      "name": "Budapest Lágymányos",
+      "kind": "station",
+      "last_forecast": "2026-08-27T06:03:11Z",
+      "last_obs": "2026-08-27T08:20:00Z",
+      "forecast_rows": 2401,
+      "obs_rows": 704,
+      "last_error": null
+    },
+    {
+      "id": "budapest",
+      "name": "Budapest Újpest",
+      "kind": "station",
+      "last_forecast": "2026-08-27T06:03:11Z",
+      "last_obs": "2026-08-27T08:20:00Z",
+      "forecast_rows": 2396,
+      "obs_rows": 700,
+      "last_error": null
+    }
+  ],
+  "sources": [
+    {
+      "provider": "open_meteo",
+      "label": "Open-Meteo",
+      "products": 2,
+      "rows": 9204,
+      "last_issued": "2026-08-27T06:00:00Z",
+      "last_error": null
+    },
+    {
+      "provider": "met_norway",
+      "label": "MET Norway",
+      "products": 1,
+      "rows": 4610,
+      "last_issued": "2026-08-27T06:00:00Z",
+      "last_error": null
+    },
+    {
+      "provider": "idokep",
+      "label": "Időkép",
+      "products": 1,
+      "rows": 4606,
+      "last_issued": "2026-08-27T05:55:00Z",
+      "last_error": null
+    },
+    {
+      "provider": "hungaromet",
+      "label": "HungaroMet",
+      "products": 1,
+      "rows": 2104,
+      "last_issued": "2026-08-27T08:20:00Z",
+      "last_error": null
+    }
+  ],
+  "runs": [
+    {
+      "started_at": "2026-08-27T08:20:02Z",
+      "finished_at": "2026-08-27T08:22:14Z",
+      "kind": "observations",
+      "slot": null,
+      "status": "ok",
+      "duration_s": 132,
+      "ok_n": 6,
+      "error_n": 0,
+      "error": null
+    },
+    {
+      "started_at": "2026-08-27T06:00:08Z",
+      "finished_at": "2026-08-27T06:03:11Z",
+      "kind": "forecasts",
+      "slot": "morning",
+      "status": "ok",
+      "duration_s": 183,
+      "ok_n": 8,
+      "error_n": 0,
+      "error": null
+    },
+    {
+      "started_at": "2026-08-26T18:00:05Z",
+      "finished_at": "2026-08-26T18:03:40Z",
+      "kind": "forecasts",
+      "slot": "evening",
+      "status": "partial",
+      "duration_s": 215,
+      "ok_n": 7,
+      "error_n": 1,
+      "error": "idokep: timeout"
+    },
+    {
+      "started_at": "2026-08-26T08:20:01Z",
+      "finished_at": "2026-08-26T08:21:58Z",
+      "kind": "observations",
+      "slot": null,
+      "status": "ok",
+      "duration_s": 117,
+      "ok_n": 6,
+      "error_n": 0,
+      "error": null
+    }
+  ]
+}

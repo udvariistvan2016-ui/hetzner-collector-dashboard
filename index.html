@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gyűjtők — állapot</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="index">
+  <a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+  <header class="masthead">
+    <p class="kicker">Hobbi adatgyűjtők</p>
+    <h1>Állapot</h1>
+    <p class="lede">Élnek-e a gyűjtők, mennyi helyet foglalnak, mikor volt az utolsó sikeres futás.</p>
+  </header>
+  <main id="tartalom">
+    <p id="banner" class="banner" hidden></p>
+    <p id="error" class="error" hidden></p>
+    <section id="host" class="host" aria-label="Gép"></section>
+    <section id="projects" class="cards" aria-label="Gyűjtők"></section>
+  </main>
+  <footer class="foot">
+    <p>A kártyák a <code>data/</code> JSON-ból épülnek. Frissítés ritkán, 15–30 percenként.</p>
+  </footer>
+  <script src="js/lib.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

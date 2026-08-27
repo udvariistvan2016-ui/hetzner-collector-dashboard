@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/collector-dashboard/status.schema.json",
+  "title": "Collector status.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "updated_at",
+    "health",
+    "service",
+    "last_ok_at",
+    "last_error",
+    "ok_last_24h",
+    "disk",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "health": { "enum": ["ok", "degraded", "down", "unknown"] },
+    "service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "name", "state"],
+      "properties": {
+        "kind": { "enum": ["systemd", "cron"] },
+        "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "state": { "enum": ["active", "inactive", "unknown"] }
+      }
+    },
+    "last_ok_at": { "type": ["string", "null"], "format": "date-time" },
+    "last_error": { "type": ["string", "null"], "maxLength": 200 },
+    "ok_last_24h": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "disk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_mb", "sqlite_mb", "raw_mb"],
+      "properties": {
+        "project_mb": { "type": "number", "minimum": 0 },
+        "sqlite_mb": { "type": "number", "minimum": 0 },
+        "raw_mb": { "type": "number", "minimum": 0 }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["number", "string", "boolean", "null"]
+      }
+    }
+  }
+}

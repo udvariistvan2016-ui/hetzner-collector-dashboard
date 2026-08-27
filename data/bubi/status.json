@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "bubi",
+  "name": "MOL Bubi",
+  "updated_at": "2026-08-27T14:08:00Z",
+  "health": "ok",
+  "service": {
+    "kind": "systemd",
+    "name": "bubi-collector",
+    "state": "active"
+  },
+  "last_ok_at": "2026-08-27T14:08:00Z",
+  "last_error": null,
+  "ok_last_24h": 0.997,
+  "disk": {
+    "project_mb": 86.3,
+    "sqlite_mb": 12.8,
+    "raw_mb": 71.9
+  },
+  "notes": {
+    "n_stations": 207,
+    "n_vehicles": 412,
+    "last_station_at": "2026-08-27T14:08:00Z",
+    "last_vehicle_at": "2026-08-27T14:05:00Z"
+  }
+}

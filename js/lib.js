@@ -1,6 +1,6 @@
 const TZ = "Europe/Budapest";
 const FORBIDDEN_KEY = /^(host(name)?|ip|ssh|path|cwd|home|user|username|opt|env|token|secret|password|key)$/i;
-const FORBIDDEN_VALUE = /(\b\d{1,3}(\.\d{1,3}){3}\b)|(\/opt\/)|(^[A-Za-z]:\\)|hobby-1/i;
+const FORBIDDEN_VALUE = /(\b\d{1,3}(\.\d{1,3}){3}\b)|(\/opt\/)|(^[A-Za-z]:\\)/i;
 
 const HEALTH_LABEL = {
   ok: "Rendben",

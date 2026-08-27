@@ -8,7 +8,7 @@ Site: https://udvariistvan2016-ui.github.io/hetzner-collector-dashboard/
 
 ## Mit nézz
 
-- Főoldal: gép (lemez%, RAM, opcionális CPU/sáv) + kártyák (health, last_ok, 24ó/ever számok, project MB)
+- Főoldal: bérelt kapacitás; lemez most; CPU/RAM 24ó és mérések óta (min–max–átlag); gyűjtő-kártyák
 - Al-lap: `project.html?id=weather` és `id=bubi`, a `detail.json`-ból
 - Kontrakt: [docs/status-schema.md](docs/status-schema.md)
 - Aggregátor váz (Hetzner, később): [docs/hetzner-aggregator.md](docs/hetzner-aggregator.md)

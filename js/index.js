@@ -1,55 +1,84 @@
-function renderHost(host) {
-  const used = Number(host.used_pct);
-  const mem = host.mem_used_pct == null ? null : Number(host.mem_used_pct);
-  const cls = used >= 90 ? "bad" : used >= 75 ? "warn" : "";
-  const memCls = mem == null ? "" : mem >= 90 ? "bad" : mem >= 75 ? "warn" : "";
-  const extras = [];
-  if (host.cpu_pct != null) extras.push(`CPU ${formatPct(host.cpu_pct)}`);
-  if (host.load_1 != null) extras.push(`load ${formatLoad(host.load_1)}`);
-  if (host.net_rx_mb_24h != null || host.net_tx_mb_24h != null) {
-    extras.push(
-      `háló 24ó ↓${formatMb(host.net_rx_mb_24h)} ↑${formatMb(host.net_tx_mb_24h)}`
-    );
-  }
-  const ramBlock =
-    mem == null
-      ? ""
-      : `<div class="host-pct">
-      <span>RAM</span>
-      ${escapeHtml(formatPct(mem))}
-    </div>`;
-  $("host").innerHTML = `
-    <div class="host-pct">
-      <span>Lemez</span>
-      ${escapeHtml(formatPct(host.used_pct))}
-    </div>
-    ${ramBlock}
-    <div class="host-meta">
-      <p>Szabad lemez: <b>${escapeHtml(formatGb(host.avail_gb))}</b></p>
-      <div class="meter ${cls}" role="meter" aria-valuemin="0" aria-valuemax="100"
-           aria-valuenow="${escapeHtml(String(used || 0))}"
-           aria-label="Lemez foglaltság">
-        <i style="width: ${Math.min(100, Math.max(0, used || 0))}%"></i>
-      </div>
-      ${
-        mem == null
-          ? ""
-          : `<div class="meter ${memCls}" style="margin-top:0.45rem" role="meter" aria-valuemin="0" aria-valuemax="100"
-           aria-valuenow="${escapeHtml(String(mem))}"
-           aria-label="RAM foglaltság">
-        <i style="width: ${Math.min(100, Math.max(0, mem))}%"></i>
-      </div>`
-      }
-      ${
-        extras.length
-          ? `<p class="host-extras">${escapeHtml(extras.join(" · "))}</p>`
-          : ""
-      }
-      <p style="margin-top:0.55rem">Tükör: ${escapeHtml(formatTime(host.updated_at))}
-        · ${escapeHtml(formatRelative(host.updated_at))} · 2 óránként</p>
+function rangeCells(block) {
+  if (!block) return ["—", "—", "—"];
+  return [formatPct(block.min), formatPct(block.max), formatPct(block.avg)];
+}
+
+function renderRangeTable(series) {
+  const h24 = rangeCells(series && series.h24);
+  const ever = rangeCells(series && series.ever);
+  return `
+    <table class="range">
+      <thead>
+        <tr><th></th><th>min</th><th>max</th><th>átlag</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">24 ó</th><td>${escapeHtml(h24[0])}</td><td>${escapeHtml(h24[1])}</td><td>${escapeHtml(h24[2])}</td></tr>
+        <tr><th scope="row">Mérések óta</th><td>${escapeHtml(ever[0])}</td><td>${escapeHtml(ever[1])}</td><td>${escapeHtml(ever[2])}</td></tr>
+      </tbody>
+    </table>
+  `;
+}
+
+function renderMeter(pct, label) {
+  const n = Number(pct);
+  const width = Number.isFinite(n) ? Math.min(100, Math.max(0, n)) : 0;
+  return `
+    <div class="meter ${meterClass(n)}" role="meter" aria-valuemin="0" aria-valuemax="100"
+         aria-valuenow="${escapeHtml(String(Number.isFinite(n) ? n : 0))}"
+         aria-label="${escapeHtml(label)}">
+      <i style="width: ${width}%"></i>
     </div>
   `;
-  $("host").classList.toggle("has-ram", mem != null);
+}
+
+function renderHost(host) {
+  const cap = host.capacity || {};
+  const disk = host.disk || {};
+  const cpu = host.cpu_pct || {};
+  const mem = host.mem_pct || {};
+  const net = host.net || {};
+  const since = host.sampled_since
+    ? `Mérések kezdete: ${formatTime(host.sampled_since)}`
+    : "";
+  $("host").innerHTML = `
+    <header class="host-cap">
+      <h2>Bérelt kapacitás</h2>
+      <p class="host-cap-line">
+        <b>${escapeHtml(formatNumber(cap.cpu_cores))}</b> vCPU
+        <span aria-hidden="true">·</span>
+        <b>${escapeHtml(formatGb(cap.ram_gb))}</b> RAM
+        <span aria-hidden="true">·</span>
+        <b>${escapeHtml(formatGb(cap.disk_gb))}</b> lemez
+      </p>
+      <p class="muted">Tükör: ${escapeHtml(formatTime(host.updated_at))}
+        · ${escapeHtml(formatRelative(host.updated_at))} · 2 óránként
+        ${since ? ` · ${escapeHtml(since)}` : ""}</p>
+    </header>
+    <div class="host-grid">
+      <article class="host-panel">
+        <h3>Lemez most</h3>
+        <p class="host-now">${escapeHtml(formatPct(disk.used_pct))}</p>
+        ${renderMeter(disk.used_pct, "Lemez foglaltság")}
+        <p class="muted">Szabad ${escapeHtml(formatGb(disk.avail_gb))}
+          ${cap.disk_gb != null ? ` / ${escapeHtml(formatGb(cap.disk_gb))} keret` : ""}</p>
+      </article>
+      <article class="host-panel">
+        <h3>CPU</h3>
+        <p class="muted">Utolsó minta ${escapeHtml(formatPct(cpu.last))} (nem 24 órás kép)</p>
+        ${renderRangeTable(cpu)}
+      </article>
+      <article class="host-panel">
+        <h3>RAM</h3>
+        <p class="muted">Utolsó minta ${escapeHtml(formatPct(mem.last))} · keret ${escapeHtml(formatGb(cap.ram_gb))}</p>
+        ${renderRangeTable(mem)}
+      </article>
+    </div>
+    ${
+      net.rx_mb_24h != null || net.tx_mb_24h != null
+        ? `<p class="host-net">Háló 24 ó · be ${escapeHtml(formatMb(net.rx_mb_24h))} · ki ${escapeHtml(formatMb(net.tx_mb_24h))}</p>`
+        : ""
+    }
+  `;
 }
 
 function renderCard(status) {

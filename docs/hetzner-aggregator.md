@@ -6,8 +6,12 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
 
 ## Mit csinál
 
-1. Lemez: `used_pct`, `avail_gb` → `data/host.json`. Nincs hostnév, nincs IP.
-   Opcionális: `mem_used_pct` (`MemAvailable`), `load_1`, `cpu_pct` (rövid `/proc/stat` mintavétel), `net_rx_mb_24h` / `net_tx_mb_24h` (helyi számláló-állapot a VPS-en, nem gitben). Projectenkénti CPU/sáv nem kell az első körben.
+1. Gép → `data/host.json`. Nincs hostnév, nincs IP, nincs load average.
+   - `capacity`: vCPU / RAM GiB / lemez GiB (nproc, MemTotal, `df`)
+   - `disk`: pillanatnyi foglaltság a **push** idején
+   - CPU% és RAM%: **helyi mintavétel sűrűbben** (pl. 5 perc, csak a VPS-en), a 2 órás pushban `last` + `h24`/`ever` min–max–átlag. Projectenkénti CPU/sáv nem kell.
+   - `net`: 24 órás RX/TX a helyi számlálóból
+   - `sampled_since`: első minta ideje
 2. Ismert projectek (szerveroldali lista, pl. `weather`, `bubi`):
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)
@@ -29,6 +33,7 @@ Ne percenként commitolj. **2 óra** a tükör ritmusa.
 ```json
 {
   "interval_minutes": 120,
+  "sample_minutes": 5,
   "projects": [
     { "id": "weather", "status_dir": "<a gyűjtő status könyvtára>" },
     { "id": "bubi", "status_dir": "<a gyűjtő status könyvtára>" }

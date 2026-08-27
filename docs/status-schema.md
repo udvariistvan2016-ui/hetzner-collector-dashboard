@@ -8,7 +8,7 @@ Minden időbélyeg **ISO-8601 UTC**, `Z` végződéssel (példa: `2026-08-27T08:
 
 ```
 data/
-  host.json              gépösszesítő (lemez)
+  host.json              gép (kapacitás, lemez, CPU, RAM)
   projects.json          ismert project-id-k listája
   <id>/status.json       közös kártya-kontrakt
   <id>/detail.json       project-specifikus al-lap
@@ -29,20 +29,59 @@ Ezek **se** `status.json`-ban, **se** `detail.json`-ban, **se** `host.json`-ban:
 
 ## `data/host.json`
 
+Gépszintű ops (nem projectenként). Sem hostnév, sem IP, sem tervazonosító kötelező.
+
+A tükör **2 óránként** pushol. A CPU/RAM **min / max / átlag** nem a push pillanatának egyetlen mintája: a VPS-en sűrűbb helyi mintavétel (pl. 5 perc), a Pagesre csak az összesítő megy. Az `ever` = a helyi mintafájl kezdete óta (`sampled_since`), nem a gép születése óta.
+
+A `load` (load average) **nem RAM** — CPU futási sor hossza. A publikus JSON-ban **nincs** `load_*`; helyette `cpu_pct`.
+
 | Mező | Típus | Kötelező | Jelentés |
 |---|---|---|---|
 | `schema_version` | `1` | igen | kontrakt verzió |
-| `updated_at` | string (UTC) | igen | mikor készült a tükör |
-| `used_pct` | number | igen | gyökér- (vagy adat-) kötet foglaltsága, 0–100 |
-| `avail_gb` | number | igen | szabad hely, GiB |
-| `mem_used_pct` | number | nem | RAM foglaltság 0–100 (`MemAvailable` alapján) |
-| `load_1` | number | nem | 1 perces load average |
-| `cpu_pct` | number | nem | CPU foglaltság 0–100, a mintavétel környékén |
-| `net_rx_mb_24h` | number | nem | bejövő forgalom, MB / 24 ó |
-| `net_tx_mb_24h` | number | nem | kimenő forgalom, MB / 24 ó |
-| `sample` | boolean | nem | `true`: mintadat, még nem a VPS |
+| `updated_at` | string (UTC) | igen | mikor készült a tükör (push) |
+| `capacity` | object | igen | bérelt keret |
+| `disk` | object | igen | lemez **most** (a tükör pillanata) |
+| `cpu_pct` | object | igen | CPU foglaltság 0–100, mintákból |
+| `mem_pct` | object | igen | RAM foglaltság 0–100 (`MemAvailable`) |
+| `net` | object | nem | forgalom |
+| `sampled_since` | string (UTC) | nem | első helyi minta ideje (`ever` kezdete) |
+| `sample` | boolean | nem | `true`: mintadat |
 
-Sem hostnév, sem IP. A CPU, a RAM és a sáv **gépszintű** (nem projectenként). A tükör **2 óránként** frissül; a 24 órás forgalomhoz az aggregátornak kell egy kis helyi állapotfájl a VPS-en (számláló-különbség), ez nem megy a Pagesre.
+### `capacity`
+
+| Mező | Jelentés |
+|---|---|
+| `cpu_cores` | vCPU darab |
+| `ram_gb` | bérelt RAM, GiB |
+| `disk_gb` | bérelt lemez, GiB |
+
+### `disk`
+
+Pillanatnyi állapot a tükör készítésekor (a lemez lassan változik).
+
+| Mező | Jelentés |
+|---|---|
+| `used_pct` | foglaltság 0–100 |
+| `avail_gb` | szabad, GiB |
+
+### `cpu_pct` és `mem_pct`
+
+| Mező | Jelentés |
+|---|---|
+| `last` | az utolsó **helyi** minta (nem 24 órás kép) |
+| `h24.min` / `h24.max` / `h24.avg` | az elmúlt 24 óra mintáiból |
+| `ever.min` / `ever.max` / `ever.avg` | `sampled_since` óta |
+
+Hiányzó ablak: a három szám `null`.
+
+### `net`
+
+| Mező | Jelentés |
+|---|---|
+| `rx_mb_24h` | bejövő MB / 24 ó |
+| `tx_mb_24h` | kimenő MB / 24 ó |
+
+Helyi számláló-állapot a VPS-en, nem a Pagesen.
 
 ## `data/projects.json`
 

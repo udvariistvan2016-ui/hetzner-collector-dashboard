@@ -177,12 +177,12 @@ function formatActivityCounts(ok, fail) {
   return `${formatNumber(ok || 0)} ok / ${formatNumber(fail || 0)} hiba`;
 }
 
-function formatLoad(n) {
-  if (n == null || Number.isNaN(Number(n))) return "—";
-  return new Intl.NumberFormat("hu-HU", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(n);
+function meterClass(pct) {
+  const n = Number(pct);
+  if (!Number.isFinite(n)) return "";
+  if (n >= 90) return "bad";
+  if (n >= 75) return "warn";
+  return "";
 }
 
 function formatValue(key, value) {
@@ -190,9 +190,10 @@ function formatValue(key, value) {
   if (typeof value === "boolean") return value ? "igen" : "nem";
   if (typeof value === "number") {
     if (key === "ok_last_24h") return formatRatio(value);
-    if (key === "load_1") return formatLoad(value);
     if (key.includes("_mb")) return formatMb(value);
-    if (key.endsWith("_pct")) return formatPct(value);
+    if (key.endsWith("_pct") || key === "last" || key === "min" || key === "max" || key === "avg") {
+      return formatPct(value);
+    }
     return formatNumber(value);
   }
   if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}T/.test(value)) {

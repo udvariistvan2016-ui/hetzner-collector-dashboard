@@ -142,47 +142,106 @@ main {
 }
 
 .host {
-  display: grid;
-  grid-template-columns: minmax(6.5rem, auto) 1fr;
-  gap: 1rem 1.5rem;
-  align-items: end;
-  padding: 1rem 0 1.5rem;
+  margin: 0 0 1.75rem;
+  padding: 0 0 1.5rem;
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 1.5rem;
 }
 
-.host.has-ram {
-  grid-template-columns: minmax(6.5rem, auto) minmax(6.5rem, auto) 1fr;
+.host-cap {
+  margin: 0 0 1.15rem;
 }
 
-.host-pct {
-  font-family: Cambria, "Iowan Old Style", serif;
-  font-size: 3.25rem;
-  line-height: 0.9;
-  font-variant-numeric: tabular-nums;
-}
-
-.host-pct span {
-  display: block;
-  font-family: "Segoe UI", system-ui, sans-serif;
+.host-cap h2,
+.host-panel h3 {
+  margin: 0 0 0.35rem;
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
   color: var(--muted);
-  margin-bottom: 0.35rem;
 }
 
-.host-meta {
-  color: var(--muted);
-  font-size: 0.92rem;
+.host-cap-line {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
 }
 
-.host-meta p {
-  margin: 0 0 0.55rem;
+.host-cap-line b {
+  font-family: Cambria, "Iowan Old Style", serif;
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
-.host-extras {
+.host-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.host-panel {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  padding: 0.75rem 0.85rem 0.9rem;
+}
+
+.host-now {
+  margin: 0 0 0.45rem;
+  font-family: Cambria, "Iowan Old Style", serif;
+  font-size: 2rem;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
+}
+
+.host-panel .muted {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+}
+
+.host-panel .meter {
+  margin: 0.15rem 0 0;
+}
+
+.host-net {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+table.range {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  margin-top: 0.45rem;
+}
+
+table.range th,
+table.range td {
+  text-align: right;
+  padding: 0.2rem 0 0.2rem 0.4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+table.range th:first-child,
+table.range td:first-child {
+  text-align: left;
+  padding-left: 0;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+table.range thead th {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+table.range tr:last-child th,
+table.range tr:last-child td {
+  border-bottom: 0;
 }
 
 .meter {
@@ -369,20 +428,13 @@ td.num {
   color: var(--muted);
 }
 
+@media (max-width: 720px) {
+  .host-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 560px) {
-  .host,
-  .host.has-ram {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .host-meta {
-    grid-column: 1 / -1;
-  }
-
-  .host-pct {
-    font-size: 2.6rem;
-  }
-
   .dl {
     grid-template-columns: 1fr;
     gap: 0;

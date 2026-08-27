@@ -143,12 +143,16 @@ main {
 
 .host {
   display: grid;
-  grid-template-columns: minmax(7rem, auto) 1fr;
+  grid-template-columns: minmax(6.5rem, auto) 1fr;
   gap: 1rem 1.5rem;
   align-items: end;
   padding: 1rem 0 1.5rem;
   border-bottom: 1px solid var(--rule);
   margin-bottom: 1.5rem;
+}
+
+.host.has-ram {
+  grid-template-columns: minmax(6.5rem, auto) minmax(6.5rem, auto) 1fr;
 }
 
 .host-pct {
@@ -366,8 +370,13 @@ td.num {
 }
 
 @media (max-width: 560px) {
-  .host {
-    grid-template-columns: 1fr;
+  .host,
+  .host.has-ram {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .host-meta {
+    grid-column: 1 / -1;
   }
 
   .host-pct {

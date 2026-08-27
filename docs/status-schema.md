@@ -35,13 +35,14 @@ Ezek **se** `status.json`-ban, **se** `detail.json`-ban, **se** `host.json`-ban:
 | `updated_at` | string (UTC) | igen | mikor készült a tükör |
 | `used_pct` | number | igen | gyökér- (vagy adat-) kötet foglaltsága, 0–100 |
 | `avail_gb` | number | igen | szabad hely, GiB |
+| `mem_used_pct` | number | nem | RAM foglaltság 0–100 (`MemAvailable` alapján) |
 | `load_1` | number | nem | 1 perces load average |
 | `cpu_pct` | number | nem | CPU foglaltság 0–100, a mintavétel környékén |
 | `net_rx_mb_24h` | number | nem | bejövő forgalom, MB / 24 ó |
 | `net_tx_mb_24h` | number | nem | kimenő forgalom, MB / 24 ó |
 | `sample` | boolean | nem | `true`: mintadat, még nem a VPS |
 
-Sem hostnév, sem IP. A CPU és a sáv **gépszintű** (nem projectenként). A 24 órás forgalomhoz az aggregátornak kell egy kis helyi állapotfájl a VPS-en (számláló-különbség), ez nem megy a Pagesre.
+Sem hostnév, sem IP. A CPU, a RAM és a sáv **gépszintű** (nem projectenként). A tükör **2 óránként** frissül; a 24 órás forgalomhoz az aggregátornak kell egy kis helyi állapotfájl a VPS-en (számláló-különbség), ez nem megy a Pagesre.
 
 ## `data/projects.json`
 

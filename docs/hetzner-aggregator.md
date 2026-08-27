@@ -1,13 +1,13 @@
 # Host-aggregátor (VPS) — váz
 
-Ez a dashboard repo **nem** futtatja a gyűjtőket, és **nem** clone-olja a collect-repókat. A Hetzneren egy külön, ritkán futó folyamat (15–30 perc) összeszedi a kész JSON-t, és a `data/` alá pusholja.
+Ez a dashboard repo **nem** futtatja a gyűjtőket, és **nem** clone-olja a collect-repókat. A Hetzneren egy külön folyamat **2 óránként** összeszedi a kész JSON-t, és a `data/` alá pusholja.
 
 A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a publikus repóba. Az aggregátor configja maradjon a szerveren.
 
 ## Mit csinál
 
 1. Lemez: `used_pct`, `avail_gb` → `data/host.json`. Nincs hostnév, nincs IP.
-   Opcionális: `load_1`, `cpu_pct` (rövid `/proc/stat` mintavétel), `net_rx_mb_24h` / `net_tx_mb_24h` (helyi számláló-állapot a VPS-en, nem gitben). Projectenkénti CPU/sáv nem kell az első körben.
+   Opcionális: `mem_used_pct` (`MemAvailable`), `load_1`, `cpu_pct` (rövid `/proc/stat` mintavétel), `net_rx_mb_24h` / `net_tx_mb_24h` (helyi számláló-állapot a VPS-en, nem gitben). Projectenkénti CPU/sáv nem kell az első körben.
 2. Ismert projectek (szerveroldali lista, pl. `weather`, `bubi`):
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)
@@ -15,7 +15,7 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
 4. Szűrés: kidob minden tiltott kulcsot / értéket (útvonal, IP, hostnév) — lásd [status-schema.md](status-schema.md).
 5. Git: csak `data/` változik. Ha nincs diff, nincs commit. Push a `main`re (Pages Actions újraépít).
 
-Ne percenként commitolj. 15–30 perc elég opsra.
+Ne percenként commitolj. **2 óra** a tükör ritmusa.
 
 ## Mit nem csinál
 
@@ -28,7 +28,7 @@ Ne percenként commitolj. 15–30 perc elég opsra.
 
 ```json
 {
-  "interval_minutes": 20,
+  "interval_minutes": 120,
   "projects": [
     { "id": "weather", "status_dir": "<a gyűjtő status könyvtára>" },
     { "id": "bubi", "status_dir": "<a gyűjtő status könyvtára>" }

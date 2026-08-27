@@ -1,6 +1,8 @@
 function renderHost(host) {
   const used = Number(host.used_pct);
+  const mem = host.mem_used_pct == null ? null : Number(host.mem_used_pct);
   const cls = used >= 90 ? "bad" : used >= 75 ? "warn" : "";
+  const memCls = mem == null ? "" : mem >= 90 ? "bad" : mem >= 75 ? "warn" : "";
   const extras = [];
   if (host.cpu_pct != null) extras.push(`CPU ${formatPct(host.cpu_pct)}`);
   if (host.load_1 != null) extras.push(`load ${formatLoad(host.load_1)}`);
@@ -9,27 +11,45 @@ function renderHost(host) {
       `háló 24ó ↓${formatMb(host.net_rx_mb_24h)} ↑${formatMb(host.net_tx_mb_24h)}`
     );
   }
+  const ramBlock =
+    mem == null
+      ? ""
+      : `<div class="host-pct">
+      <span>RAM</span>
+      ${escapeHtml(formatPct(mem))}
+    </div>`;
   $("host").innerHTML = `
     <div class="host-pct">
       <span>Lemez</span>
       ${escapeHtml(formatPct(host.used_pct))}
     </div>
+    ${ramBlock}
     <div class="host-meta">
-      <p>Szabad: <b>${escapeHtml(formatGb(host.avail_gb))}</b></p>
+      <p>Szabad lemez: <b>${escapeHtml(formatGb(host.avail_gb))}</b></p>
       <div class="meter ${cls}" role="meter" aria-valuemin="0" aria-valuemax="100"
            aria-valuenow="${escapeHtml(String(used || 0))}"
            aria-label="Lemez foglaltság">
         <i style="width: ${Math.min(100, Math.max(0, used || 0))}%"></i>
       </div>
       ${
+        mem == null
+          ? ""
+          : `<div class="meter ${memCls}" style="margin-top:0.45rem" role="meter" aria-valuemin="0" aria-valuemax="100"
+           aria-valuenow="${escapeHtml(String(mem))}"
+           aria-label="RAM foglaltság">
+        <i style="width: ${Math.min(100, Math.max(0, mem))}%"></i>
+      </div>`
+      }
+      ${
         extras.length
           ? `<p class="host-extras">${escapeHtml(extras.join(" · "))}</p>`
           : ""
       }
       <p style="margin-top:0.55rem">Tükör: ${escapeHtml(formatTime(host.updated_at))}
-        · ${escapeHtml(formatRelative(host.updated_at))}</p>
+        · ${escapeHtml(formatRelative(host.updated_at))} · 2 óránként</p>
     </div>
   `;
+  $("host").classList.toggle("has-ram", mem != null);
 }
 
 function renderCard(status) {
@@ -74,8 +94,8 @@ async function main() {
       showBanner("Mintadat — a VPS még nem tölti a tükröt. A kártyák a repo példájából épülnek.");
     } else {
       const ageMs = Date.now() - new Date(host.updated_at).getTime();
-      if (Number.isFinite(ageMs) && ageMs > 2 * 3600 * 1000) {
-        showBanner("A tükör több mint 2 órája nem frissült — a gyűjtő ettől még futhat.");
+      if (Number.isFinite(ageMs) && ageMs > 6 * 3600 * 1000) {
+        showBanner("A tükör több mint 6 órája nem frissült — a gyűjtő ettől még futhat.");
       }
     }
     renderHost(host);

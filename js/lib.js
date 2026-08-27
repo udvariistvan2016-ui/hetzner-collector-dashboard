@@ -11,6 +11,7 @@ const HEALTH_LABEL = {
 
 const KIND_LABEL = { systemd: "systemd", cron: "cron" };
 const STATE_LABEL = { active: "fut", inactive: "áll", unknown: "ismeretlen" };
+const ACTIVITY_KIND_LABEL = { run: "futás", poll: "lekérés" };
 
 const NOTE_LABEL = {
   n_locations: "Helyek",
@@ -24,6 +25,10 @@ const NOTE_LABEL = {
   n_vehicles: "Járművek",
   last_station_at: "Állomás poll",
   last_vehicle_at: "Jármű poll",
+  ok_24h: "Ok 24ó",
+  fail_24h: "Hiba 24ó",
+  ok_ever: "Ok összesen",
+  fail_ever: "Hiba összesen",
 };
 
 const FIELD_LABEL = {
@@ -163,12 +168,30 @@ function formatNumber(n) {
   return new Intl.NumberFormat("hu-HU").format(n);
 }
 
+function activityUnit(activity) {
+  return ACTIVITY_KIND_LABEL[(activity && activity.kind) || ""] || "esemény";
+}
+
+function formatActivityCounts(ok, fail) {
+  if (ok == null && fail == null) return "—";
+  return `${formatNumber(ok || 0)} ok / ${formatNumber(fail || 0)} hiba`;
+}
+
+function formatLoad(n) {
+  if (n == null || Number.isNaN(Number(n))) return "—";
+  return new Intl.NumberFormat("hu-HU", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(n);
+}
+
 function formatValue(key, value) {
   if (value == null || value === "") return "—";
   if (typeof value === "boolean") return value ? "igen" : "nem";
   if (typeof value === "number") {
     if (key === "ok_last_24h") return formatRatio(value);
-    if (key.endsWith("_mb")) return formatMb(value);
+    if (key === "load_1") return formatLoad(value);
+    if (key.includes("_mb")) return formatMb(value);
     if (key.endsWith("_pct")) return formatPct(value);
     return formatNumber(value);
   }

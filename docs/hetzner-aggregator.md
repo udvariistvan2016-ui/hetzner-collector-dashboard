@@ -7,6 +7,7 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
 ## Mit csinál
 
 1. Lemez: `used_pct`, `avail_gb` → `data/host.json`. Nincs hostnév, nincs IP.
+   Opcionális: `load_1`, `cpu_pct` (rövid `/proc/stat` mintavétel), `net_rx_mb_24h` / `net_tx_mb_24h` (helyi számláló-állapot a VPS-en, nem gitben). Projectenkénti CPU/sáv nem kell az első körben.
 2. Ismert projectek (szerveroldali lista, pl. `weather`, `bubi`):
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)

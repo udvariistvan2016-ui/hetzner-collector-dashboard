@@ -3,5 +3,9 @@
   "updated_at": "2026-08-27T14:10:00Z",
   "used_pct": 31.2,
   "avail_gb": 26.4,
+  "load_1": 0.08,
+  "cpu_pct": 3.4,
+  "net_rx_mb_24h": 48.2,
+  "net_tx_mb_24h": 6.1,
   "sample": true
 }

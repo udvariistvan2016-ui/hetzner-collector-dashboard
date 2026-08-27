@@ -3,16 +3,20 @@ const SKIP_DETAIL_KEYS = new Set([
   "id",
   "updated_at",
   "sample",
+  "activity",
 ]);
 
 function renderSummary(status) {
   const disk = status.disk || {};
   const service = status.service || {};
+  const activity = status.activity || {};
   const notes = sanitizeRecord(status.notes || {});
+  const unit = activityUnit(activity);
   const stats = [
     ["Állapot", HEALTH_LABEL[healthClass(status.health)]],
     ["Utolsó siker", formatTime(status.last_ok_at)],
-    ["Ok 24ó", formatRatio(status.ok_last_24h)],
+    [`24ó (${unit})`, `${formatActivityCounts(activity.ok_24h, activity.fail_24h)} · ${formatRatio(status.ok_last_24h)}`],
+    ["Összesen", formatActivityCounts(activity.ok_ever, activity.fail_ever)],
     ["Project", formatMb(disk.project_mb)],
     ["SQLite", formatMb(disk.sqlite_mb)],
     ["Nyers", formatMb(disk.raw_mb)],

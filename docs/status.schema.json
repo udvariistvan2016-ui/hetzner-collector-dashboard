@@ -14,6 +14,7 @@
     "last_ok_at",
     "last_error",
     "ok_last_24h",
+    "activity",
     "disk",
     "notes"
   ],
@@ -39,6 +40,18 @@
       "type": ["number", "null"],
       "minimum": 0,
       "maximum": 1
+    },
+    "activity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ok_24h", "fail_24h", "ok_ever", "fail_ever"],
+      "properties": {
+        "kind": { "enum": ["run", "poll"] },
+        "ok_24h": { "type": ["integer", "null"], "minimum": 0 },
+        "fail_24h": { "type": ["integer", "null"], "minimum": 0 },
+        "ok_ever": { "type": ["integer", "null"], "minimum": 0 },
+        "fail_ever": { "type": ["integer", "null"], "minimum": 0 }
+      }
     },
     "disk": {
       "type": "object",

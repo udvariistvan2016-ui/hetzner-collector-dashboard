@@ -35,9 +35,13 @@ Ezek **se** `status.json`-ban, **se** `detail.json`-ban, **se** `host.json`-ban:
 | `updated_at` | string (UTC) | igen | mikor készült a tükör |
 | `used_pct` | number | igen | gyökér- (vagy adat-) kötet foglaltsága, 0–100 |
 | `avail_gb` | number | igen | szabad hely, GiB |
+| `load_1` | number | nem | 1 perces load average |
+| `cpu_pct` | number | nem | CPU foglaltság 0–100, a mintavétel környékén |
+| `net_rx_mb_24h` | number | nem | bejövő forgalom, MB / 24 ó |
+| `net_tx_mb_24h` | number | nem | kimenő forgalom, MB / 24 ó |
 | `sample` | boolean | nem | `true`: mintadat, még nem a VPS |
 
-Sem hostnév, sem IP.
+Sem hostnév, sem IP. A CPU és a sáv **gépszintű** (nem projectenként). A 24 órás forgalomhoz az aggregátornak kell egy kis helyi állapotfájl a VPS-en (számláló-különbség), ez nem megy a Pagesre.
 
 ## `data/projects.json`
 
@@ -65,6 +69,7 @@ Minden gyűjtő ugyanezt a vázat írja. Gép-specifikus mező (`service.state`)
 | `last_ok_at` | string (UTC) \| `null` | igen |
 | `last_error` | string \| `null` | igen |
 | `ok_last_24h` | number 0–1 \| `null` | igen |
+| `activity` | object | igen |
 | `disk` | object | igen |
 | `notes` | object | igen, lehet `{}` |
 
@@ -77,6 +82,20 @@ Minden gyűjtő ugyanezt a vázat írja. Gép-specifikus mező (`service.state`)
 | `state` | string | `active` \| `inactive` \| `unknown` |
 
 Cronos gyűjtőnél a `state` gyakran `unknown`, amíg az aggregátor nem ellenőrzi a crontabot. Systemd-nél az aggregátor tipikusan `active` / `inactive`.
+
+### `activity`
+
+A kártya „rendben fut-e” száma. Nem adat-sor, hanem **esemény**: weather = ingest futás (`run`), Bubi = poll (`poll`). `partial` / `error` → `fail_*`.
+
+| Mező | Típus | Jelentés |
+|---|---|---|
+| `kind` | `run` \| `poll` | mi a számolt egység |
+| `ok_24h` | integer \| `null` | sikeres esemény az elmúlt 24 órában |
+| `fail_24h` | integer \| `null` | hibás / részleges az elmúlt 24 órában |
+| `ok_ever` | integer \| `null` | sikeres esemény a tárolt történetben |
+| `fail_ever` | integer \| `null` | hibás / részleges összesen |
+
+Az `ok_last_24h` arány: `ok_24h / (ok_24h + fail_24h)`, ha van nevező. A `health` a **mostani** állapotról szól (last_ok ablak); a 24 órás számok ettől eltérhetnek (volt egy esti partial, de az utolsó forecast+obs már ok).
 
 ### `disk`
 

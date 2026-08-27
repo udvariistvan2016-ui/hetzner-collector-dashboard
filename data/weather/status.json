@@ -11,7 +11,14 @@
   },
   "last_ok_at": "2026-08-27T08:22:14Z",
   "last_error": null,
-  "ok_last_24h": 1.0,
+  "ok_last_24h": 0.667,
+  "activity": {
+    "kind": "run",
+    "ok_24h": 2,
+    "fail_24h": 1,
+    "ok_ever": 46,
+    "fail_ever": 3
+  },
   "disk": {
     "project_mb": 18.6,
     "sqlite_mb": 4.1,

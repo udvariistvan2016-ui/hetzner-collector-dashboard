@@ -177,6 +177,10 @@ main {
   margin: 0 0 0.55rem;
 }
 
+.host-extras {
+  font-variant-numeric: tabular-nums;
+}
+
 .meter {
   height: 8px;
   background: var(--unknown-bg);

@@ -12,6 +12,13 @@
   "last_ok_at": "2026-08-27T14:08:00Z",
   "last_error": null,
   "ok_last_24h": 0.997,
+  "activity": {
+    "kind": "poll",
+    "ok_24h": 1718,
+    "fail_24h": 5,
+    "ok_ever": 18420,
+    "fail_ever": 62
+  },
   "disk": {
     "project_mb": 86.3,
     "sqlite_mb": 12.8,

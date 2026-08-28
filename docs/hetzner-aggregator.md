@@ -6,12 +6,13 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
 
 ## Mit csinál
 
-1. Gép → `data/host.json`. Nincs hostnév, nincs IP, nincs load average.
-   - `capacity`: vCPU / RAM GiB / lemez GiB (nproc, MemTotal, `df`)
-   - `disk`: pillanatnyi foglaltság a **push** idején
-   - CPU% és RAM%: **helyi mintavétel sűrűbben** (pl. 5 perc, csak a VPS-en), a 2 órás pushban `last` + `h24`/`ever` min–max–átlag. Projectenkénti CPU/sáv nem kell.
-   - `net`: 24 órás RX/TX a helyi számlálóból
-   - `sampled_since`: első minta ideje
+1. Gép → `data/host.json`. Nincs hostnév, IP, load average, API token, szerver-id.
+   - `capacity`: vCPU / RAM GiB / lemez GiB
+   - `disk`: pillanatnyi foglaltság a **push** idején (vendég `df`; a Hetzner metrics nem fájlrendszer-telítettség)
+   - **CPU 24ó/ever:** Hetzner `GET /servers/{id}/metrics?type=cpu` (~60 s). Ne 5 percenként mintázzunk a vendégben.
+   - **RAM:** a Hetzner API **nem** adja. Nincs syslog-történet. Vagy (a) mostani `MemAvailable` + cgroup `memory.peak` az `ever.max`-hoz, vagy (b) 10–15 s-es helyi ciklus, ami **csak** futó min/max/összeg/db-ot tart (nem idősort). 5 perc RAM-maxnak hazugság.
+   - `net`: Hetzner `network` metrics (24 ó integrálható) vagy `/proc/net/dev` helyi számláló
+   - `sampled_since`: RAM-minta vagy peak-figyelés kezdete; CPU-nál a metrics-lekérés ablakáé
 2. Ismert projectek (szerveroldali lista, pl. `weather`, `bubi`):
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)
@@ -33,7 +34,6 @@ Ne percenként commitolj. **2 óra** a tükör ritmusa.
 ```json
 {
   "interval_minutes": 120,
-  "sample_minutes": 5,
   "projects": [
     { "id": "weather", "status_dir": "<a gyűjtő status könyvtára>" },
     { "id": "bubi", "status_dir": "<a gyűjtő status könyvtára>" }

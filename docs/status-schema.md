@@ -31,9 +31,18 @@ Ezek **se** `status.json`-ban, **se** `detail.json`-ban, **se** `host.json`-ban:
 
 Gépszintű ops (nem projectenként). Sem hostnév, sem IP, sem tervazonosító kötelező.
 
-A tükör **2 óránként** pushol. A CPU/RAM **min / max / átlag** nem a push pillanatának egyetlen mintája: a VPS-en sűrűbb helyi mintavétel (pl. 5 perc), a Pagesre csak az összesítő megy. Az `ever` = a helyi mintafájl kezdete óta (`sampled_since`), nem a gép születése óta.
+A tükör **2 óránként** pushol. **Nincs** Ubuntu-alapértelmezett CPU/RAM-napló (`journald` / syslog nem gyűjti). A 5 perces saját minta **csúcsot szépít** — ne ezt használjuk max-nak.
 
-A `load` (load average) **nem RAM** — CPU futási sor hossza. A publikus JSON-ban **nincs** `load_*`; helyette `cpu_pct`.
+| Forrás | Mit ad | Csúcs? |
+|---|---|---|
+| Hetzner Cloud metrics API | CPU %, háló, lemez I/O, ~**60 s** | a perces pontok maxa; 1–2 s spike még kimaradhat |
+| Vendég OS | RAM (`MemAvailable`); a hipervizor RAM-ot **nem** lát | 10–15 s helyi **összesítő** (csak min/max/átlag, nem idősor) |
+| `memory.peak` (cgroup) | RAM csúcs **boot óta** | igen, kernel méri |
+| `sysstat`/`sar` | ha telepíted, tipikusan 10 perc | ugyanúgy szépít |
+
+A `load` **nem RAM**. Publikus JSON-ban nincs `load_*`.
+
+API token és szerver-id **csak a VPS configban**, nem a Pagesen.
 
 | Mező | Típus | Kötelező | Jelentés |
 |---|---|---|---|
@@ -68,11 +77,13 @@ Pillanatnyi állapot a tükör készítésekor (a lemez lassan változik).
 
 | Mező | Jelentés |
 |---|---|
-| `last` | az utolsó **helyi** minta (nem 24 órás kép) |
-| `h24.min` / `h24.max` / `h24.avg` | az elmúlt 24 óra mintáiból |
-| `ever.min` / `ever.max` / `ever.avg` | `sampled_since` óta |
+| `source` | `hetzner` (CPU, hipervizor) vagy `guest` (RAM, a VM belől) |
+| `step_s` | a nyers pontok időközé (CPU ~60, RAM helyi összesítő ~10–15) |
+| `last` | utolsó ismert pont |
+| `h24.min` / `h24.max` / `h24.avg` | 24 óra ezekből a pontokból |
+| `ever.min` / `ever.max` / `ever.avg` | `sampled_since` óta (RAM `ever.max` lehet `memory.peak`) |
 
-Hiányzó ablak: a három szám `null`.
+Hiányzó ablak: a három szám `null`. A max **nem** ígér szub-lépésnyi spike-ot.
 
 ### `net`
 

@@ -31,6 +31,28 @@ function renderMeter(pct, label) {
   `;
 }
 
+function seriesCaption(series, kind) {
+  const src =
+    series.source === "hetzner"
+      ? "Hetzner hipervizor"
+      : series.source === "guest"
+        ? "vendég OS"
+        : "";
+  const step = Number(series.step_s);
+  let grain = "";
+  if (Number.isFinite(step) && step > 0) {
+    grain =
+      step < 60
+        ? `${step} s-es helyi csúcsfigyelés`
+        : `~${Math.round(step / 60)} perces pontok`;
+  }
+  const last = `utolsó pont ${formatPct(series.last)}`;
+  if (kind === "cpu") {
+    return [src, grain, last, "1–2 s spike kimaradhat"].filter(Boolean).join(" · ");
+  }
+  return [src, grain, last].filter(Boolean).join(" · ");
+}
+
 function renderHost(host) {
   const cap = host.capacity || {};
   const disk = host.disk || {};
@@ -64,12 +86,13 @@ function renderHost(host) {
       </article>
       <article class="host-panel">
         <h3>CPU</h3>
-        <p class="muted">Utolsó minta ${escapeHtml(formatPct(cpu.last))} (nem 24 órás kép)</p>
+        <p class="muted">${escapeHtml(seriesCaption(cpu, "cpu"))}</p>
         ${renderRangeTable(cpu)}
       </article>
       <article class="host-panel">
         <h3>RAM</h3>
-        <p class="muted">Utolsó minta ${escapeHtml(formatPct(mem.last))} · keret ${escapeHtml(formatGb(cap.ram_gb))}</p>
+        <p class="muted">${escapeHtml(seriesCaption(mem, "mem"))}
+          ${cap.ram_gb != null ? ` · keret ${escapeHtml(formatGb(cap.ram_gb))}` : ""}</p>
         ${renderRangeTable(mem)}
       </article>
     </div>

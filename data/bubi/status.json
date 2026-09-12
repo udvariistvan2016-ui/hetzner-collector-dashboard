@@ -2,32 +2,32 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-09-12T02:07:06Z",
-  "health": "ok",
+  "updated_at": "2026-09-12T04:08:09Z",
+  "health": "degraded",
   "service": {
     "kind": "systemd",
     "name": "bubi-collector",
     "state": "active"
   },
-  "last_ok_at": "2026-09-12T02:07:05Z",
-  "last_error": null,
-  "ok_last_24h": 1.0,
+  "last_ok_at": "2026-09-12T04:07:59Z",
+  "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: <urlopen error [Errno -3] Temporary failure in name resolution>",
+  "ok_last_24h": 0.9993,
   "activity": {
     "kind": "poll",
     "ok_24h": 1440,
-    "fail_24h": 0,
-    "ok_ever": 23478,
-    "fail_ever": 6
+    "fail_24h": 1,
+    "ok_ever": 23599,
+    "fail_ever": 7
   },
   "disk": {
-    "project_mb": 1823.1,
-    "sqlite_mb": 1624.8,
-    "raw_mb": 198.3
+    "project_mb": 1836.0,
+    "sqlite_mb": 1636.8,
+    "raw_mb": 199.3
   },
   "notes": {
     "n_stations": 219,
     "n_vehicles": 620,
-    "last_station_at": "2026-09-12T02:06:05Z",
-    "last_vehicle_at": "2026-09-12T02:07:05Z"
+    "last_station_at": "2026-09-12T04:06:05Z",
+    "last_vehicle_at": "2026-09-12T04:07:59Z"
   }
 }

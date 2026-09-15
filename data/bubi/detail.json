@@ -1,41 +1,104 @@
 {
   "schema_version": 1,
   "id": "bubi",
-  "updated_at": "2026-09-14T22:07:50Z",
+  "updated_at": "2026-09-15T00:07:50Z",
   "last_error": null,
   "disk": {
-    "project_mb": 2141.2,
-    "sqlite_mb": 1908.5,
-    "raw_mb": 232.8
+    "project_mb": 2150.8,
+    "sqlite_mb": 1916.9,
+    "raw_mb": 233.9
   },
   "jobs": {
     "station_1min": {
-      "last_ok_at": "2026-09-14T22:06:49Z",
-      "ok_last_24h": 0.9974,
-      "fail_last_24h": 3,
+      "last_ok_at": "2026-09-15T00:06:49Z",
+      "ok_last_24h": 0.9983,
+      "fail_last_24h": 2,
       "n_stations": 219
     },
     "vehicle_5min": {
-      "last_ok_at": "2026-09-14T22:07:49Z",
-      "ok_last_24h": 0.9965,
-      "fail_last_24h": 1,
+      "last_ok_at": "2026-09-15T00:07:49Z",
+      "ok_last_24h": 1.0,
+      "fail_last_24h": 0,
       "n_stations": 219,
-      "n_vehicles": 746
+      "n_vehicles": 749
     }
   },
   "recent_polls": [
     {
       "job": "vehicle_5min",
-      "fetched_at": "2026-09-14T22:07:49Z",
+      "fetched_at": "2026-09-15T00:07:49Z",
       "ok": true,
       "n_stations": 219,
-      "n_vehicles": 746,
-      "duration_ms": 422,
+      "n_vehicles": 749,
+      "duration_ms": 426,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T22:06:49Z",
+      "fetched_at": "2026-09-15T00:06:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 85,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-15T00:05:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 74,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-15T00:04:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 85,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-15T00:03:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 63,
+      "error": null
+    },
+    {
+      "job": "vehicle_5min",
+      "fetched_at": "2026-09-15T00:02:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": 752,
+      "duration_ms": 407,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-15T00:01:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 70,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-15T00:00:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 85,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-14T23:59:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
@@ -44,142 +107,34 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T22:05:49Z",
+      "fetched_at": "2026-09-14T23:58:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 76,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T22:04:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 79,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T22:03:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 112,
+      "duration_ms": 68,
       "error": null
     },
     {
       "job": "vehicle_5min",
-      "fetched_at": "2026-09-14T22:02:49Z",
+      "fetched_at": "2026-09-14T23:57:49Z",
       "ok": true,
       "n_stations": 219,
-      "n_vehicles": 742,
-      "duration_ms": 477,
+      "n_vehicles": 749,
+      "duration_ms": 448,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T22:01:49Z",
+      "fetched_at": "2026-09-14T23:56:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 69,
+      "duration_ms": 88,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T22:00:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 66,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:59:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 64,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:58:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 76,
-      "error": null
-    },
-    {
-      "job": "vehicle_5min",
-      "fetched_at": "2026-09-14T21:57:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": 744,
-      "duration_ms": 425,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:56:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 75,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:55:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 66,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:54:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 77,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:53:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 65,
-      "error": null
-    },
-    {
-      "job": "vehicle_5min",
-      "fetched_at": "2026-09-14T21:52:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": 743,
-      "duration_ms": 417,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:51:49Z",
-      "ok": true,
-      "n_stations": 219,
-      "n_vehicles": null,
-      "duration_ms": 67,
-      "error": null
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-09-14T21:50:49Z",
+      "fetched_at": "2026-09-14T23:55:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
@@ -188,56 +143,101 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T21:49:49Z",
+      "fetched_at": "2026-09-14T23:54:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 83,
+      "duration_ms": 64,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T21:48:49Z",
+      "fetched_at": "2026-09-14T23:53:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 65,
+      "duration_ms": 64,
       "error": null
     },
     {
       "job": "vehicle_5min",
-      "fetched_at": "2026-09-14T21:47:49Z",
+      "fetched_at": "2026-09-14T23:52:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": 748,
-      "duration_ms": 411,
+      "duration_ms": 446,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T21:46:49Z",
+      "fetched_at": "2026-09-14T23:51:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 75,
+      "duration_ms": 68,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T21:45:49Z",
+      "fetched_at": "2026-09-14T23:50:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 75,
+      "duration_ms": 80,
       "error": null
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-09-14T21:44:49Z",
+      "fetched_at": "2026-09-14T23:49:49Z",
       "ok": true,
       "n_stations": 219,
       "n_vehicles": null,
-      "duration_ms": 82,
+      "duration_ms": 74,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-14T23:48:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 74,
+      "error": null
+    },
+    {
+      "job": "vehicle_5min",
+      "fetched_at": "2026-09-14T23:47:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": 746,
+      "duration_ms": 458,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-14T23:46:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 64,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-14T23:45:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 77,
+      "error": null
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-09-14T23:44:49Z",
+      "ok": true,
+      "n_stations": 219,
+      "n_vehicles": null,
+      "duration_ms": 109,
       "error": null
     }
   ]

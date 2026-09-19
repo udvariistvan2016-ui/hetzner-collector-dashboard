@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "aldi-lidl",
+  "updated_at": "2026-09-18T10:10:00Z",
+  "counts": {
+    "chains": 2,
+    "horizon": "napi"
+  },
+  "about": {
+    "forras": "GVH Árfigyelő nyilvános Excel és API",
+    "mit": "Aldi és Lidl napi árak, lánc- és boltár",
+    "status_json": "a gyűjtő még nem ír közös kártyát; a tükör helykitöltő"
+  }
+}

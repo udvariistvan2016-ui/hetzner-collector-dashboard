@@ -58,6 +58,8 @@
       "additionalProperties": false,
       "required": ["project_mb", "sqlite_mb", "raw_mb"],
       "properties": {
+        "total_mb": { "type": "number", "minimum": 0 },
+        "data_mb": { "type": "number", "minimum": 0 },
         "project_mb": { "type": "number", "minimum": 0 },
         "sqlite_mb": { "type": "number", "minimum": 0 },
         "raw_mb": { "type": "number", "minimum": 0 }

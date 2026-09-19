@@ -25,6 +25,10 @@ const NOTE_LABEL = {
   n_vehicles: "Járművek",
   last_station_at: "Állomás poll",
   last_vehicle_at: "Jármű poll",
+  phase: "Fázis",
+  route: "Útvonal",
+  source: "Forrás",
+  chains: "Láncok",
   ok_24h: "Ok 24ó",
   fail_24h: "Hiba 24ó",
   ok_ever: "Ok összesen",
@@ -66,6 +70,26 @@ const FIELD_LABEL = {
   obs_n: "Megfigyelés",
   daily_n: "Napi aggregátum",
   n_locations: "Helyek",
+  total_mb: "Project total",
+  data_mb: "Project adat",
+  project_mb: "Project adat",
+  sqlite_mb: "SQLite",
+  raw_mb: "Nyers",
+  fs_gb: "Fájlrendszer",
+  used_gb: "Foglalt",
+  avail_gb: "Szabad",
+  used_pct: "Foglaltság",
+  phase: "Fázis",
+  route: "Útvonal",
+  source: "Forrás",
+  chains: "Láncok",
+  horizon_days: "Horizont (nap)",
+  forras: "Forrás",
+  mit: "Mit",
+  hol: "Hol",
+  nem_ide: "Nem ide",
+  status_json: "Status JSON",
+  horizon: "Ritmus",
 };
 
 function $(id) {
@@ -187,6 +211,10 @@ function meterClass(pct) {
 
 function formatValue(key, value) {
   if (value == null || value === "") return "—";
+  if (key === "phase") {
+    if (value === "planned") return "előkészítés";
+    if (value === "setup") return "beüzemelés";
+  }
   if (typeof value === "boolean") return value ? "igen" : "nem";
   if (typeof value === "number") {
     if (key === "ok_last_24h") return formatRatio(value);
@@ -234,10 +262,42 @@ function labelFor(key) {
   return NOTE_LABEL[key] || FIELD_LABEL[key] || key.replaceAll("_", " ");
 }
 
+function filesystemGb(host) {
+  const disk = (host && host.disk) || {};
+  const stated = Number(disk.fs_gb);
+  if (Number.isFinite(stated) && stated > 0) return stated;
+  const avail = Number(disk.avail_gb);
+  const pct = Number(disk.used_pct);
+  if (Number.isFinite(avail) && Number.isFinite(pct) && pct >= 0 && pct < 100) {
+    return avail / (1 - pct / 100);
+  }
+  return null;
+}
+
+function dataMb(disk) {
+  if (!disk) return null;
+  if (disk.data_mb != null) return disk.data_mb;
+  return disk.project_mb;
+}
+
+function totalMb(disk) {
+  if (!disk) return null;
+  if (disk.total_mb != null) return disk.total_mb;
+  return null;
+}
+
+function isPlanned(status) {
+  const notes = (status && status.notes) || {};
+  return notes.phase === "planned" || notes.phase === "setup";
+}
+
 const CARD_NOTE_KEYS = [
   "last_forecast_status",
   "last_obs_status",
   "n_locations",
   "n_stations",
   "n_vehicles",
+  "route",
+  "source",
+  "chains",
 ];

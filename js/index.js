@@ -59,6 +59,12 @@ function renderHost(host) {
   const cpu = host.cpu_pct || {};
   const mem = host.mem_pct || {};
   const net = host.net || {};
+  const fsGb = filesystemGb(host);
+  const usedGb = Number.isFinite(Number(disk.used_gb))
+    ? Number(disk.used_gb)
+    : fsGb != null && disk.avail_gb != null
+      ? fsGb - Number(disk.avail_gb)
+      : null;
   const since = host.sampled_since
     ? `Mérések kezdete: ${formatTime(host.sampled_since)}`
     : "";
@@ -80,9 +86,15 @@ function renderHost(host) {
       <article class="host-panel">
         <h3>Lemez most</h3>
         <p class="host-now">${escapeHtml(formatPct(disk.used_pct))}</p>
-        ${renderMeter(disk.used_pct, "Lemez foglaltság")}
-        <p class="muted">Szabad ${escapeHtml(formatGb(disk.avail_gb))}
-          ${cap.disk_gb != null ? ` / ${escapeHtml(formatGb(cap.disk_gb))} keret` : ""}</p>
+        ${renderMeter(disk.used_pct, "Lemez foglaltság a fájlrendszeren")}
+        <p class="muted">A százalék a <b>${escapeHtml(formatGb(fsGb))}</b> fájlrendszerre vonatkozik
+          ${usedGb != null ? ` · foglalt ${escapeHtml(formatGb(usedGb))}` : ""}
+          · szabad ${escapeHtml(formatGb(disk.avail_gb))}</p>
+        <p class="muted">${
+          cap.disk_gb != null
+            ? `Bérelt keret ${escapeHtml(formatGb(cap.disk_gb))} (partíció és reserved ettől kevesebb)`
+            : ""
+        }</p>
       </article>
       <article class="host-panel">
         <h3>CPU</h3>
@@ -113,20 +125,29 @@ function renderCard(status) {
   const service = status.service || {};
   const activity = status.activity || {};
   const unit = activityUnit(activity);
+  const disk = status.disk || {};
+  const planned = isPlanned(status);
+  const total = totalMb(disk);
+  const data = dataMb(disk);
+  const placeRows = [
+    total != null
+      ? `<dt>Project total</dt><dd>${escapeHtml(formatMb(total))}</dd>`
+      : "",
+    `<dt>Project adat</dt><dd>${escapeHtml(formatMb(data))}</dd>`,
+  ].join("");
   return `
-    <a class="card health-${escapeHtml(health)}" href="project.html?id=${encodeURIComponent(status.id)}">
-      ${pill(health)}
+    <a class="card health-${escapeHtml(health)}${planned ? " planned" : ""}" href="project.html?id=${encodeURIComponent(status.id)}">
+      ${planned ? `<span class="pill unknown">Előkészítés</span>` : pill(health)}
       <h2>${escapeHtml(status.name || status.id)}</h2>
       <dl class="dl">
         <dt>Utolsó siker</dt>
-        <dd>${escapeHtml(formatRelative(status.last_ok_at))}</dd>
+        <dd>${escapeHtml(planned ? "—" : formatRelative(status.last_ok_at))}</dd>
         <dt>24ó (${escapeHtml(unit)})</dt>
         <dd>${escapeHtml(formatActivityCounts(activity.ok_24h, activity.fail_24h))}
           · ${escapeHtml(formatRatio(status.ok_last_24h))}</dd>
         <dt>Összesen</dt>
         <dd>${escapeHtml(formatActivityCounts(activity.ok_ever, activity.fail_ever))}</dd>
-        <dt>Hely</dt>
-        <dd>${escapeHtml(formatMb(status.disk && status.disk.project_mb))}</dd>
+        ${placeRows}
         <dt>Szolgáltatás</dt>
         <dd>${escapeHtml(KIND_LABEL[service.kind] || service.kind || "—")}
           · ${escapeHtml(STATE_LABEL[service.state] || service.state || "—")}</dd>
@@ -167,7 +188,7 @@ async function main() {
             last_error: String(err.message || err),
             ok_last_24h: null,
             activity: { kind: "run", ok_24h: null, fail_24h: null, ok_ever: null, fail_ever: null },
-            disk: { project_mb: 0, sqlite_mb: 0, raw_mb: 0 },
+            disk: { total_mb: 0, data_mb: 0, project_mb: 0, sqlite_mb: 0, raw_mb: 0 },
             notes: {},
           };
         }

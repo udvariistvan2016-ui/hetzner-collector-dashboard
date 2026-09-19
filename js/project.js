@@ -13,16 +13,22 @@ function renderSummary(status) {
   const notes = sanitizeRecord(status.notes || {});
   const unit = activityUnit(activity);
   const stats = [
-    ["Állapot", HEALTH_LABEL[healthClass(status.health)]],
+    ["Állapot", isPlanned(status) ? "Előkészítés" : HEALTH_LABEL[healthClass(status.health)]],
     ["Utolsó siker", formatTime(status.last_ok_at)],
     [`24ó (${unit})`, `${formatActivityCounts(activity.ok_24h, activity.fail_24h)} · ${formatRatio(status.ok_last_24h)}`],
     ["Összesen", formatActivityCounts(activity.ok_ever, activity.fail_ever)],
-    ["Project", formatMb(disk.project_mb)],
+  ];
+  if (totalMb(disk) != null) {
+    stats.push(["Project total", formatMb(totalMb(disk))]);
+  }
+  stats.push(
+    ["Project adat", formatMb(dataMb(disk))],
     ["SQLite", formatMb(disk.sqlite_mb)],
     ["Nyers", formatMb(disk.raw_mb)],
     ["Szolgáltatás", `${KIND_LABEL[service.kind] || service.kind || "—"} · ${STATE_LABEL[service.state] || service.state || "—"}`],
-  ];
+  );
   const noteRows = Object.entries(notes)
+    .filter(([key]) => key !== "phase")
     .map(
       ([key, value]) =>
         `<div class="stat"><span>${escapeHtml(labelFor(key))}</span><b>${escapeHtml(formatValue(key, value))}</b></div>`
@@ -141,7 +147,7 @@ function sectionTitle(key) {
     sources: "Források",
     runs: "Futások",
     jobs: "Jobok",
-    recent_polls: "Utolsó pollok",
+    about: "Röviden",
   };
   return titles[key] || key.replaceAll("_", " ");
 }

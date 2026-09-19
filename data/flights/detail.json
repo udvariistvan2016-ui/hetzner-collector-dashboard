@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "flights",
+  "updated_at": "2026-09-18T10:10:00Z",
+  "counts": {
+    "horizon_days": 180,
+    "route": "BUD–MAD"
+  },
+  "about": {
+    "mit": "Napi jegyár-pillanatfelvétel, először BUD–MAD",
+    "hol": "még a laptopon fut; a VPS-re költözés után a tükör ide másolja a status JSON-t",
+    "nem_ide": "a saját GitHub Pages naptár HTML-je nem kerül erre az oldalra"
+  }
+}

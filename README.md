@@ -1,6 +1,6 @@
 # Gyűjtő állapot — publikus dashboard
 
-Statikus GitHub Pages site a **Hetzner** VPS hobbi gyűjtőiről (először időjárás és MOL Bubi). A gyűjtő-repók kódja nem itt van. A VPS később csak a `data/` fájlokat tölti.
+Statikus GitHub Pages site a **Hetzner** VPS hobbi gyűjtőiről (időjárás, MOL Bubi, Aldi vs Lidl, előkészített repjegy). A gyűjtő-repók kódja nem itt van. A VPS a `data/` fájlokat tölti.
 
 Böngészőből, SSH nélkül: él-e a gyűjtő, mennyi a hely, mikor volt az utolsó sikeres futás, hány lekérés/futás volt 24 órában és összesen.
 
@@ -8,8 +8,8 @@ Site: https://udvariistvan2016-ui.github.io/hetzner-collector-dashboard/
 
 ## Mit nézz
 
-- Főoldal: bérelt kapacitás; lemez most; CPU/RAM 24ó és mérések óta (min–max–átlag); gyűjtő-kártyák
-- Al-lap: `project.html?id=weather` és `id=bubi`, a `detail.json`-ból
+- Főoldal: bérelt kapacitás; lemez a fájlrendszeren (% + GB) és külön a 40 GB keret; CPU/RAM 24ó és mérések óta; gyűjtő-kártyák (project total / adat)
+- Al-lap: `project.html?id=weather`, `bubi`, `aldi-lidl`, `flights`
 - Kontrakt: [docs/status-schema.md](docs/status-schema.md)
 - Aggregátor váz (Hetzner, később): [docs/hetzner-aggregator.md](docs/hetzner-aggregator.md)
 

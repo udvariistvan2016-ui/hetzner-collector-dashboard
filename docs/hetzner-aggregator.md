@@ -8,13 +8,15 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
 
 1. Gép → `data/host.json`. Nincs hostnév, IP, load average, API token, szerver-id.
    - `capacity`: vCPU / RAM GiB / lemez GiB
-   - `disk`: pillanatnyi foglaltság a **push** idején (vendég `df`; a Hetzner metrics nem fájlrendszer-telítettség)
+   - `disk`: pillanatnyi foglaltság a **push** idején (vendég `df`). `used_pct` a **fájlrendszer** `fs_gb` méretéhez. A `capacity.disk_gb` a bérelt keret (CX23: 40), ettől a formázott kötet kisebb (~37 GB). A Hetzner metrics nem fájlrendszer-telítettség.
    - **CPU 24ó/ever:** Hetzner `GET /servers/{id}/metrics?type=cpu` (~60 s). Ne 5 percenként mintázzunk a vendégben.
    - **RAM:** a Hetzner API **nem** adja. Nincs syslog-történet. Vagy (a) mostani `MemAvailable` + cgroup `memory.peak` az `ever.max`-hoz, vagy (b) 10–15 s-es helyi ciklus, ami **csak** futó min/max/összeg/db-ot tart (nem idősort). 5 perc RAM-maxnak hazugság.
    - `net`: Hetzner `network` metrics (24 ó integrálható) vagy `/proc/net/dev` helyi számláló
    - `sampled_since`: RAM-minta vagy peak-figyelés kezdete; CPU-nál a metrics-lekérés ablakáé
-2. Ismert projectek (szerveroldali lista, pl. `weather`, `bubi`):
+2. Ismert projectek (szerveroldali lista: `weather`, `bubi`, `aldi-lidl`, és a tervezett `flights`):
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
+   - `disk.total_mb`: `du` a config `root_dir`-en (kód+venv+adat). `disk.data_mb` a gyűjtő `project_mb` / `data_dir`
+   - ha nincs még status fájl: helykitöltő kártya (`notes.phase`: `setup` vagy `planned`)
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)
 3. Frissíti a `data/projects.json` id-listáját.
 4. Szűrés: kidob minden tiltott kulcsot / értéket (útvonal, IP, hostnév) — lásd [status-schema.md](status-schema.md).
@@ -35,8 +37,10 @@ Ne percenként commitolj. **2 óra** a tükör ritmusa.
 {
   "interval_minutes": 120,
   "projects": [
-    { "id": "weather", "status_dir": "<a gyűjtő status könyvtára>" },
-    { "id": "bubi", "status_dir": "<a gyűjtő status könyvtára>" }
+    { "id": "weather", "status_dir": "<status könyvtár>", "root_dir": "<project gyökér>", "data_dir": "<adat könyvtár>" },
+    { "id": "bubi", "status_dir": "<status könyvtár>", "root_dir": "<project gyökér>", "data_dir": "<adat könyvtár>", "unit": "bubi-collector" },
+    { "id": "aldi-lidl", "name": "Aldi vs Lidl", "status_dir": "<ha van status JSON>", "root_dir": "<clone gyökér>", "data_dir": "<adat>" },
+    { "id": "flights", "name": "Repjegy", "planned": true }
   ],
   "units": {
     "bubi": "bubi-collector"

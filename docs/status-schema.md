@@ -14,7 +14,7 @@ data/
   <id>/detail.json       project-specifikus al-lap
 ```
 
-`<id>`: kisbetű, szám, kötőjel (`^[a-z0-9-]+$`). Első kettő: `weather`, `bubi`.
+`<id>`: kisbetű, szám, kötőjel (`^[a-z0-9-]+$`). Ismert id-k: `weather`, `bubi`, `aldi-lidl`, `flights`.
 
 ## Tilos a publikus JSON-ban
 
@@ -70,8 +70,10 @@ Pillanatnyi állapot a tükör készítésekor (a lemez lassan változik).
 
 | Mező | Jelentés |
 |---|---|
-| `used_pct` | foglaltság 0–100 |
-| `avail_gb` | szabad, GiB |
+| `used_pct` | foglaltság 0–100, a **fájlrendszer** méretéhez (`fs_gb`), nem a bérelt kerethez |
+| `fs_gb` | a `/` kötet mérete GiB-ben (`df` Size). A CX23 40 GB keretből kb. 37 GB |
+| `used_gb` | foglalt GiB ugyanezen a köteten |
+| `avail_gb` | szabad, GiB (nem-rootnak elérhető) |
 
 ### `cpu_pct` és `mem_pct`
 
@@ -154,9 +156,11 @@ Számok **megabyte**-ban (nem bájt). Hiányzó rész legyen `0`, ne `null`.
 
 | Mező | Jelentés |
 |---|---|
-| `project_mb` | a project adatkönyvtára összesen (sqlite + nyers + egyéb) |
+| `total_mb` | a project **egésze** a gépen (kód + venv/image-réteg nélküli checkout + adat). Az aggregátor `du`-zza a rootot. Hiányozhat, amíg a tükör nem tölti. |
+| `data_mb` | gyűjtött adat (sqlite + nyers + egyéb a data könyvtárban) |
+| `project_mb` | régi név a `data_mb`-re; a gyűjtők ezt írják. A UI `data_mb`, ha nincs, ezt használja |
 | `sqlite_mb` | adatbázis fájl(ok) |
-| `raw_mb` | nyers mentés (gzip JSON stb.) |
+| `raw_mb` | nyers mentés (gzip JSON, Excel stb.) |
 
 ### `health` (ajánlás a gyűjtőknek)
 
@@ -197,6 +201,10 @@ Kicsi, kártyára való skalárok: number, string, boolean vagy `null`. Nincs m�
 | `n_vehicles` | utolsó `vehicle_5min` |
 | `last_station_at` | UTC |
 | `last_vehicle_at` | UTC |
+
+**Aldi vs Lidl** (`aldi-lidl`): napi ingest a GVH Árfigyelőből (Excel + API). `activity.kind`: `run`. Amíg nincs saját `status.json` író, a tükör helykitöltőt rak (`notes.phase`: `setup`).
+
+**Repjegy** (`flights`): BUD–MAD (később más útvonal) napi ár-pillanat. `activity.kind`: `run`. Amíg a VPS-re nem költözik: `notes.phase`: `planned`. A saját naptár-HTML nem ide másolódik.
 
 Új gyűjtő új kulcsokat hozhat; a dashboard ismeretlen skalárt az al-lapon kulcs–értéknek rajzol.
 

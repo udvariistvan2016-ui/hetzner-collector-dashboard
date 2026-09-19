@@ -22,7 +22,9 @@
   "disk": {
     "project_mb": 1010.5,
     "sqlite_mb": 70.5,
-    "raw_mb": 939.9
+    "raw_mb": 939.9,
+    "data_mb": 1010.5,
+    "total_mb": 1010.5
   },
   "notes": {
     "n_locations": 15,

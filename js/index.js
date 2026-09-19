@@ -53,18 +53,49 @@ function seriesCaption(series, kind) {
   return [src, grain, last].filter(Boolean).join(" · ");
 }
 
-function renderHost(host) {
+function renderDiskMeter(disk, parts) {
+  const fsGb = parts.fsGb;
+  const usedPct = disk.used_pct;
+  if (
+    fsGb &&
+    parts.projectsGb != null &&
+    parts.otherGb != null &&
+    fsGb > 0
+  ) {
+    const projPct = Math.max(0, (parts.projectsGb / fsGb) * 100);
+    const otherPct = Math.max(0, (parts.otherGb / fsGb) * 100);
+    return `
+      <div class="meter parts ${meterClass(usedPct)}" role="meter" aria-valuemin="0" aria-valuemax="100"
+           aria-valuenow="${escapeHtml(String(Number.isFinite(Number(usedPct)) ? usedPct : 0))}"
+           aria-label="Lemez: kártyák ${formatGb(parts.projectsGb)}, a többi ${formatGb(parts.otherGb)}">
+        <i class="seg-projects" style="width: ${projPct}%"></i>
+        <i class="seg-other" style="width: ${otherPct}%"></i>
+      </div>
+    `;
+  }
+  return renderMeter(usedPct, "Lemez foglaltság a fájlrendszeren");
+}
+
+function renderDiskSplit(parts) {
+  if (parts.projectsGb == null || parts.otherGb == null) return "";
+  const dataNote =
+    parts.dataGb != null && Math.abs(parts.projectsGb - parts.dataGb) >= 0.05
+      ? ` (ebből adat ${escapeHtml(formatGb(parts.dataGb))})`
+      : "";
+  return `<p class="disk-split">Kártyákon <b>${escapeHtml(formatGb(parts.projectsGb))}</b>${dataNote}
+    · a többi <b>${escapeHtml(formatGb(parts.otherGb))}</b>
+    (rendszer, Docker, tartalék — nem a kártyák összege)</p>`;
+}
+
+function renderHost(host, statuses) {
   const cap = host.capacity || {};
   const disk = host.disk || {};
   const cpu = host.cpu_pct || {};
   const mem = host.mem_pct || {};
   const net = host.net || {};
-  const fsGb = filesystemGb(host);
-  const usedGb = Number.isFinite(Number(disk.used_gb))
-    ? Number(disk.used_gb)
-    : fsGb != null && disk.avail_gb != null
-      ? fsGb - Number(disk.avail_gb)
-      : null;
+  const parts = diskBreakdown(host, statuses);
+  const fsGb = parts.fsGb;
+  const usedGb = parts.usedGb;
   const since = host.sampled_since
     ? `Mérések kezdete: ${formatTime(host.sampled_since)}`
     : "";
@@ -86,7 +117,8 @@ function renderHost(host) {
       <article class="host-panel">
         <h3>Lemez most</h3>
         <p class="host-now">${escapeHtml(formatPct(disk.used_pct))}</p>
-        ${renderMeter(disk.used_pct, "Lemez foglaltság a fájlrendszeren")}
+        ${renderDiskMeter(disk, parts)}
+        ${renderDiskSplit(parts)}
         <p class="muted">A százalék a <b>${escapeHtml(formatGb(fsGb))}</b> fájlrendszerre vonatkozik
           ${usedGb != null ? ` · foglalt ${escapeHtml(formatGb(usedGb))}` : ""}
           · szabad ${escapeHtml(formatGb(disk.avail_gb))}</p>
@@ -127,13 +159,13 @@ function renderCard(status) {
   const unit = activityUnit(activity);
   const disk = status.disk || {};
   const planned = isPlanned(status);
-  const total = totalMb(disk);
   const data = dataMb(disk);
+  const total = distinctTotalMb(disk);
   const placeRows = [
     total != null
-      ? `<dt>Project total</dt><dd>${escapeHtml(formatMb(total))}</dd>`
+      ? `<dt>Könyvtár összesen</dt><dd>${escapeHtml(formatMb(total))}</dd>`
       : "",
-    `<dt>Project adat</dt><dd>${escapeHtml(formatMb(data))}</dd>`,
+    `<dt>Gyűjtött adat</dt><dd>${escapeHtml(formatMb(data))}</dd>`,
   ].join("");
   return `
     <a class="card health-${escapeHtml(health)}${planned ? " planned" : ""}" href="project.html?id=${encodeURIComponent(status.id)}">
@@ -171,7 +203,6 @@ async function main() {
         showBanner("A tükör több mint 6 órája nem frissült — a gyűjtő ettől még futhat.");
       }
     }
-    renderHost(host);
     const ids = Array.isArray(catalog.projects) ? catalog.projects : [];
     const results = await Promise.all(
       ids.map(async (id) => {
@@ -194,6 +225,7 @@ async function main() {
         }
       })
     );
+    renderHost(host, results);
     $("projects").innerHTML = results.map(renderCard).join("");
   } catch (err) {
     showError(

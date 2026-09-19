@@ -18,11 +18,11 @@ function renderSummary(status) {
     [`24ó (${unit})`, `${formatActivityCounts(activity.ok_24h, activity.fail_24h)} · ${formatRatio(status.ok_last_24h)}`],
     ["Összesen", formatActivityCounts(activity.ok_ever, activity.fail_ever)],
   ];
-  if (totalMb(disk) != null) {
-    stats.push(["Project total", formatMb(totalMb(disk))]);
+  if (distinctTotalMb(disk) != null) {
+    stats.push(["Könyvtár összesen", formatMb(distinctTotalMb(disk))]);
   }
   stats.push(
-    ["Project adat", formatMb(dataMb(disk))],
+    ["Gyűjtött adat", formatMb(dataMb(disk))],
     ["SQLite", formatMb(disk.sqlite_mb)],
     ["Nyers", formatMb(disk.raw_mb)],
     ["Szolgáltatás", `${KIND_LABEL[service.kind] || service.kind || "—"} · ${STATE_LABEL[service.state] || service.state || "—"}`],

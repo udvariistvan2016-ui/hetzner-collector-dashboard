@@ -70,9 +70,12 @@ const FIELD_LABEL = {
   obs_n: "Megfigyelés",
   daily_n: "Napi aggregátum",
   n_locations: "Helyek",
-  total_mb: "Project total",
-  data_mb: "Project adat",
-  project_mb: "Project adat",
+  total_mb: "Könyvtár összesen",
+  data_mb: "Gyűjtött adat",
+  project_mb: "Gyűjtött adat",
+  projects_gb: "Kártyákon",
+  data_gb: "ebből adat",
+  other_gb: "A többi",
   sqlite_mb: "SQLite",
   raw_mb: "Nyers",
   fs_gb: "Fájlrendszer",
@@ -284,6 +287,58 @@ function totalMb(disk) {
   if (!disk) return null;
   if (disk.total_mb != null) return disk.total_mb;
   return null;
+}
+
+function mbToGb(mb) {
+  const n = Number(mb);
+  if (!Number.isFinite(n)) return 0;
+  return Math.round((n / 1024) * 10) / 10;
+}
+
+function distinctTotalMb(disk) {
+  const total = totalMb(disk);
+  const data = dataMb(disk);
+  if (total == null || data == null) return total;
+  if (Math.abs(Number(total) - Number(data)) < 1) return null;
+  return total;
+}
+
+function diskBreakdown(host, statuses) {
+  const disk = (host && host.disk) || {};
+  const fsGb = filesystemGb(host);
+  const usedGb = Number.isFinite(Number(disk.used_gb))
+    ? Number(disk.used_gb)
+    : fsGb != null && disk.avail_gb != null
+      ? fsGb - Number(disk.avail_gb)
+      : null;
+  let projectsGb = Number(disk.projects_gb);
+  let dataGb = Number(disk.data_gb);
+  let otherGb = Number(disk.other_gb);
+  if (!Number.isFinite(projectsGb) && Array.isArray(statuses)) {
+    let dataMbSum = 0;
+    let totalMbSum = 0;
+    for (const status of statuses) {
+      const part = (status && status.disk) || {};
+      const data = Number(dataMb(part));
+      const total = Number(totalMb(part));
+      const dataN = Number.isFinite(data) ? data : 0;
+      dataMbSum += dataN;
+      totalMbSum += Number.isFinite(total) ? total : dataN;
+    }
+    projectsGb = mbToGb(totalMbSum);
+    dataGb = mbToGb(dataMbSum);
+  }
+  if (!Number.isFinite(dataGb)) dataGb = projectsGb;
+  if (!Number.isFinite(otherGb) && usedGb != null && Number.isFinite(projectsGb)) {
+    otherGb = Math.round(Math.max(0, usedGb - projectsGb) * 10) / 10;
+  }
+  return {
+    fsGb,
+    usedGb,
+    projectsGb: Number.isFinite(projectsGb) ? projectsGb : null,
+    dataGb: Number.isFinite(dataGb) ? dataGb : null,
+    otherGb: Number.isFinite(otherGb) ? otherGb : null,
+  };
 }
 
 function isPlanned(status) {

@@ -74,6 +74,11 @@ Pillanatnyi állapot a tükör készítésekor (a lemez lassan változik).
 | `fs_gb` | a `/` kötet mérete GiB-ben (`df` Size). A CX23 40 GB keretből kb. 37 GB |
 | `used_gb` | foglalt GiB ugyanezen a köteten |
 | `avail_gb` | szabad, GiB (nem-rootnak elérhető) |
+| `projects_gb` | a kártyákon mért projectek összege (könyvtár `total_mb`) |
+| `data_gb` | a kártyákon a gyűjtött adat összege (`data_mb`) |
+| `other_gb` | `used_gb − projects_gb`: rendszer, Docker, tartalék — **nem** útvonal, **nem** a kártyák |
+
+A 10 GB körüli `used_gb` **nem** a két gyűjtő sqlite-ja. A UI a lemezpanelen szétválasztja: kártyákon vs. a többi.
 
 ### `cpu_pct` és `mem_pct`
 
@@ -156,7 +161,7 @@ Számok **megabyte**-ban (nem bájt). Hiányzó rész legyen `0`, ne `null`.
 
 | Mező | Jelentés |
 |---|---|
-| `total_mb` | a project **egésze** a gépen (kód + venv/image-réteg nélküli checkout + adat). Az aggregátor `du`-zza a rootot. Hiányozhat, amíg a tükör nem tölti. |
+| `total_mb` | a project **egésze** a gépen (kód + venv + adat). Az aggregátor `du`-zza a rootot (`root_dir`, vagy a `status_dir` `…/data/status` szülője). Hiányozhat / megegyezhet a `data_mb`-vel, amíg nincs gyökér. |
 | `data_mb` | gyűjtött adat (sqlite + nyers + egyéb a data könyvtárban) |
 | `project_mb` | régi név a `data_mb`-re; a gyűjtők ezt írják. A UI `data_mb`, ha nincs, ezt használja |
 | `sqlite_mb` | adatbázis fájl(ok) |

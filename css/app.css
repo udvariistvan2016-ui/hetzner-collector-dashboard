@@ -264,6 +264,39 @@ table.range tr:last-child td {
   background: var(--down);
 }
 
+.meter.parts {
+  display: flex;
+  overflow: hidden;
+}
+
+.meter.parts > i {
+  width: auto;
+  flex: none;
+}
+
+.meter.parts .seg-projects {
+  background: var(--ink);
+}
+
+.meter.parts .seg-other {
+  background: color-mix(in srgb, var(--ink) 38%, var(--unknown-bg));
+}
+
+.meter.parts.warn .seg-other,
+.meter.parts.bad .seg-other {
+  background: color-mix(in srgb, var(--ink) 22%, var(--unknown-bg));
+}
+
+.disk-split {
+  margin: 0.55rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.disk-split b {
+  font-weight: 600;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16.5rem, 1fr));

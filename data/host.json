@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-20T00:10:14Z",
+  "updated_at": "2026-09-20T02:10:14Z",
   "sampled_since": "2026-08-29T09:37:46Z",
   "capacity": {
     "cpu_cores": 2,
@@ -10,17 +10,17 @@
   "disk": {
     "fs_gb": 37.2,
     "used_gb": 10.8,
-    "avail_gb": 26.5,
-    "used_pct": 28.9
+    "avail_gb": 26.4,
+    "used_pct": 29.0
   },
   "cpu_pct": {
     "source": "hetzner",
     "step_s": 432,
-    "last": 3.85,
+    "last": 3.79,
     "h24": {
       "min": 2.83,
-      "max": 21.17,
-      "avg": 6.93
+      "max": 18.88,
+      "avg": 6.46
     },
     "ever": {
       "min": 0.46,
@@ -31,20 +31,20 @@
   "mem_pct": {
     "source": "guest",
     "step_s": 15,
-    "last": 25.68,
+    "last": 25.52,
     "h24": {
       "min": 24.93,
       "max": 42.56,
-      "avg": 30.11
+      "avg": 29.35
     },
     "ever": {
       "min": 11.95,
       "max": 55.09,
-      "avg": 15.25
+      "avg": 15.29
     }
   },
   "net": {
-    "rx_mb_24h": 873.2,
-    "tx_mb_24h": 22.9
+    "rx_mb_24h": 874.2,
+    "tx_mb_24h": 22.8
   }
 }

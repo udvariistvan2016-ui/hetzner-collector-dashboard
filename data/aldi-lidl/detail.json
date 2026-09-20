@@ -1,14 +1,76 @@
 {
   "schema_version": 1,
   "id": "aldi-lidl",
-  "updated_at": "2026-09-18T10:10:00Z",
+  "updated_at": "2026-09-20T09:22:14Z",
   "counts": {
-    "chains": 2,
-    "horizon": "napi"
+    "products": 1331,
+    "observations": 21698,
+    "obs_last_day": 5420,
+    "shops": 1825,
+    "categories": 212,
+    "horizon": "napi kétszer"
   },
   "about": {
     "forras": "GVH Árfigyelő nyilvános Excel és API",
     "mit": "Aldi és Lidl napi árak, lánc- és boltár",
-    "status_json": "a gyűjtő még nem ír közös kártyát; a tükör helykitöltő"
-  }
+    "hol": "két beállított bolt"
+  },
+  "runs": [
+    {
+      "started_at": "2026-09-20T06:20:04Z",
+      "finished_at": "2026-09-20T06:32:09Z",
+      "status": "success",
+      "observed_on": "2026-09-20",
+      "duration_s": 725,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-19T18:20:04Z",
+      "finished_at": "2026-09-19T18:32:08Z",
+      "status": "success",
+      "observed_on": "2026-09-18",
+      "duration_s": 724,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-19T06:20:04Z",
+      "finished_at": "2026-09-19T06:32:09Z",
+      "status": "success",
+      "observed_on": "2026-09-18",
+      "duration_s": 725,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-18T18:20:04Z",
+      "finished_at": "2026-09-18T18:32:09Z",
+      "status": "success",
+      "observed_on": "2026-09-18",
+      "duration_s": 725,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-18T07:32:23Z",
+      "finished_at": "2026-09-18T07:44:27Z",
+      "status": "success",
+      "observed_on": "2026-09-17",
+      "duration_s": 724,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-17T21:17:04Z",
+      "finished_at": "2026-09-17T21:29:00Z",
+      "status": "success",
+      "observed_on": "2026-09-17",
+      "duration_s": 716,
+      "error": null
+    },
+    {
+      "started_at": "2026-09-17T18:12:17Z",
+      "finished_at": "2026-09-17T18:24:13Z",
+      "status": "success",
+      "observed_on": "2026-09-17",
+      "duration_s": 716,
+      "error": null
+    }
+  ]
 }

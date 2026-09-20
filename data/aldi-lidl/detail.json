@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "id": "aldi-lidl",
-  "updated_at": "2026-09-20T18:10:14Z",
+  "updated_at": "2026-09-20T20:10:08Z",
   "counts": {
     "products": 1331,
-    "observations": 21698,
-    "obs_last_day": 5420,
+    "observations": 27118,
+    "obs_last_day": 10840,
     "shops": 1825,
     "categories": 212,
     "horizon": "napi kétszer"
@@ -16,6 +16,14 @@
     "hol": "két beállított bolt"
   },
   "runs": [
+    {
+      "started_at": "2026-09-20T18:20:04Z",
+      "finished_at": "2026-09-20T18:32:11Z",
+      "status": "success",
+      "observed_on": "2026-09-20",
+      "duration_s": 727,
+      "error": null
+    },
     {
       "started_at": "2026-09-20T06:20:04Z",
       "finished_at": "2026-09-20T06:32:09Z",

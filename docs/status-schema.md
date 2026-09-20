@@ -207,7 +207,9 @@ Kicsi, kártyára való skalárok: number, string, boolean vagy `null`. Nincs m�
 | `last_station_at` | UTC |
 | `last_vehicle_at` | UTC |
 
-**Aldi vs Lidl** (`aldi-lidl`): napi ingest a GVH Árfigyelőből (Excel + API). `activity.kind`: `run`. Amíg nincs saját `status.json` író, a tükör helykitöltőt rak (`notes.phase`: `setup`).
+**Aldi vs Lidl** (`aldi-lidl`): napi kétszer ingest a GVH Árfigyelőből (Excel + API), cron 8:20 / 20:20. `activity.kind`: `run`. A tükör a Postgres `ingest_runs` táblából írja a kártyát (16 órán belül `ok`, 36 órán belül `degraded`).
+
+Példa `notes`: `source`, `chains`, `observed_on`, `n_products`, `n_obs` (az utolsó árnap), `last_ingest_status`.
 
 **Repjegy** (`flights`): BUD–MAD (később más útvonal) napi ár-pillanat. `activity.kind`: `run`. Amíg a VPS-re nem költözik: `notes.phase`: `planned`. A saját naptár-HTML nem ide másolódik.
 
@@ -240,6 +242,10 @@ Ne tegyél ide tiltott mezőt. Koordináta, teljes GBFS dump, ingest log nem kel
 `jobs` objektum kulcsonként (`station_1min`, `vehicle_5min`): `last_ok_at`, `ok_last_24h`, `fail_last_24h`, plusz `n_stations` / `n_vehicles` ha van.
 
 `recent_polls[]`: `job`, `fetched_at`, `ok`, `n_stations`, `n_vehicles`, `duration_ms`, `error`. Rövid lista, nem a teljes nap.
+
+### Aldi vs Lidl — ajánlott blokkok
+
+`counts` skalárok: `products`, `observations`, `obs_last_day`, `shops`, `categories`. `runs[]`: utolsó ~24 ingest (`started_at`, `finished_at`, `status`, `observed_on`, `duration_s`, `error`). Nincs Excel-útvonal, nincs bolt-cím.
 
 ## Gép és UI
 

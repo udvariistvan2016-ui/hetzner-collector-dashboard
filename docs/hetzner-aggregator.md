@@ -18,6 +18,7 @@ A forrásútvonalak, OS user, hostnév, IP, SSH alias **ne** kerüljenek ebbe a 
    - bemásolja a gyűjtő `status.json` és `detail.json` fájlját → `data/<id>/`
    - `disk.total_mb`: `du` a `root_dir`-en, vagy ha nincs megadva, a `status_dir` `…/data/status` → gyökér kikövetkeztetése. `disk.data_mb` a `data_dir` / a gyűjtő `project_mb`.
    - ha nincs még status fájl: helykitöltő kártya (`notes.phase`: `setup` vagy `planned`)
+   - `aldi-lidl`: a tükör a Postgres `ingest_runs` táblából írja a `data/status` JSON-t (Docker `db`), majd bemásolja. Nincs jelszó a Pagesen.
    - opcionálisan felülírja a `service.state` mezőt (systemd: `active` / `inactive`; cron: ha van ellenőrzés, különben `unknown`)
 3. Frissíti a `data/projects.json` id-listáját.
 4. Szűrés: kidob minden tiltott kulcsot / értéket (útvonal, IP, hostnév) — lásd [status-schema.md](status-schema.md).

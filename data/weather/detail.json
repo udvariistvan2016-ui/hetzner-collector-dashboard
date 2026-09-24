@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "id": "weather",
-  "updated_at": "2026-09-24T06:03:29Z",
+  "updated_at": "2026-09-24T08:20:11Z",
   "timezone": "Europe/Budapest",
   "counts": {
     "forecast_n": 158052,
-    "obs_n": 82316,
-    "daily_n": 3445,
+    "obs_n": 82628,
+    "daily_n": 3458,
     "n_locations": 15
   },
   "locations": [
@@ -35,9 +35,9 @@
       "name": "Balatonkenese",
       "kind": "station",
       "last_forecast": "2026-09-24T06:02:46Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10793,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -45,9 +45,9 @@
       "name": "Budapest Lágymányos",
       "kind": "station",
       "last_forecast": "2026-09-24T06:01:14Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10647,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -55,9 +55,9 @@
       "name": "Budapest Újpest",
       "kind": "station",
       "last_forecast": "2026-09-24T06:01:53Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -65,9 +65,9 @@
       "name": "Debrecen repülőtér",
       "kind": "station",
       "last_forecast": "2026-09-24T06:03:16Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -75,9 +75,9 @@
       "name": "Győr Egyetem",
       "kind": "station",
       "last_forecast": "2026-09-24T06:03:29Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10793,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -85,9 +85,9 @@
       "name": "Miskolc Diósgyőr",
       "kind": "station",
       "last_forecast": "2026-09-24T06:03:09Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -95,9 +95,9 @@
       "name": "Napkor",
       "kind": "station",
       "last_forecast": "2026-09-24T06:02:24Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -105,9 +105,9 @@
       "name": "Nyíregyháza repülőtér",
       "kind": "station",
       "last_forecast": "2026-09-24T06:02:09Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10646,
-      "obs_rows": 6284,
+      "obs_rows": 6308,
       "last_error": null
     },
     {
@@ -115,9 +115,9 @@
       "name": "Pécs Egyetem",
       "kind": "station",
       "last_forecast": "2026-09-24T06:03:22Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -125,9 +125,9 @@
       "name": "Siófok",
       "kind": "station",
       "last_forecast": "2026-09-24T06:02:55Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10793,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -135,9 +135,9 @@
       "name": "Szeged belterület",
       "kind": "station",
       "last_forecast": "2026-09-24T06:03:01Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10675,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -145,9 +145,9 @@
       "name": "Szentkirályszabadja repülőtér",
       "kind": "station",
       "last_forecast": "2026-09-24T06:02:37Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10793,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     },
     {
@@ -155,9 +155,9 @@
       "name": "Érd Ófalu",
       "kind": "station",
       "last_forecast": "2026-09-24T06:01:36Z",
-      "last_obs": "2026-09-21T23:00:00Z",
+      "last_obs": "2026-09-22T23:00:00Z",
       "forecast_rows": 10660,
-      "obs_rows": 6336,
+      "obs_rows": 6360,
       "last_error": null
     }
   ],
@@ -198,12 +198,23 @@
       "provider": "hungaromet",
       "label": "HungaroMet",
       "products": 1,
-      "rows": 82316,
-      "last_issued": "2026-09-21T23:00:00Z",
+      "rows": 82628,
+      "last_issued": "2026-09-22T23:00:00Z",
       "last_error": null
     }
   ],
   "runs": [
+    {
+      "started_at": "2026-09-24T08:20:01Z",
+      "finished_at": "2026-09-24T08:20:11Z",
+      "kind": "observations",
+      "slot": "archive",
+      "status": "ok",
+      "duration_s": 10,
+      "ok_n": 13,
+      "error_n": 0,
+      "error": null
+    },
     {
       "started_at": "2026-09-24T06:00:01Z",
       "finished_at": "2026-09-24T06:03:29Z",
@@ -630,17 +641,6 @@
       "status": "ok",
       "duration_s": 10,
       "ok_n": 13,
-      "error_n": 0,
-      "error": null
-    },
-    {
-      "started_at": "2026-09-11T06:00:01Z",
-      "finished_at": "2026-09-11T06:02:37Z",
-      "kind": "forecasts",
-      "slot": "morning",
-      "status": "ok",
-      "duration_s": 156,
-      "ok_n": 257,
       "error_n": 0,
       "error": null
     }

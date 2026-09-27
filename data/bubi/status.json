@@ -2,34 +2,34 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-09-27T02:06:38Z",
+  "updated_at": "2026-09-27T04:09:59Z",
   "health": "ok",
   "service": {
     "kind": "systemd",
     "name": "bubi-collector",
     "state": "active"
   },
-  "last_ok_at": "2026-09-27T02:06:36Z",
+  "last_ok_at": "2026-09-27T04:09:57Z",
   "last_error": null,
   "ok_last_24h": 1.0,
   "activity": {
     "kind": "poll",
     "ok_24h": 1441,
     "fail_24h": 0,
-    "ok_ever": 45070,
+    "ok_ever": 45193,
     "fail_ever": 14
   },
   "disk": {
-    "project_mb": 3721.0,
-    "sqlite_mb": 3259.9,
-    "raw_mb": 461.1,
-    "data_mb": 3721.0,
-    "total_mb": 3721.2
+    "project_mb": 3731.1,
+    "sqlite_mb": 3268.6,
+    "raw_mb": 462.5,
+    "data_mb": 3731.1,
+    "total_mb": 3731.3
   },
   "notes": {
     "n_stations": 638,
-    "n_vehicles": 504,
-    "last_station_at": "2026-09-27T02:05:36Z",
-    "last_vehicle_at": "2026-09-27T02:06:36Z"
+    "n_vehicles": 515,
+    "last_station_at": "2026-09-27T04:08:57Z",
+    "last_vehicle_at": "2026-09-27T04:09:57Z"
   }
 }

@@ -2,34 +2,34 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-10-01T04:07:53Z",
-  "health": "degraded",
+  "updated_at": "2026-10-01T06:07:54Z",
+  "health": "ok",
   "service": {
     "kind": "systemd",
     "name": "bubi-collector",
     "state": "active"
   },
-  "last_ok_at": "2026-10-01T04:07:38Z",
-  "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: <urlopen error [Errno -3] Temporary failure in name resolution>",
+  "last_ok_at": "2026-10-01T06:07:52Z",
+  "last_error": null,
   "ok_last_24h": 0.9993,
   "activity": {
     "kind": "poll",
     "ok_24h": 1440,
     "fail_24h": 1,
-    "ok_ever": 50947,
+    "ok_ever": 51067,
     "fail_ever": 18
   },
   "disk": {
-    "project_mb": 4182.4,
-    "sqlite_mb": 3634.1,
-    "raw_mb": 548.2,
-    "data_mb": 4182.4,
-    "total_mb": 4182.6
+    "project_mb": 4189.2,
+    "sqlite_mb": 3639.9,
+    "raw_mb": 549.3,
+    "data_mb": 4189.2,
+    "total_mb": 4189.4
   },
   "notes": {
     "n_stations": 639,
-    "n_vehicles": 119,
-    "last_station_at": "2026-10-01T04:07:38Z",
-    "last_vehicle_at": "2026-10-01T04:04:38Z"
+    "n_vehicles": 155,
+    "last_station_at": "2026-10-01T06:06:52Z",
+    "last_vehicle_at": "2026-10-01T06:07:52Z"
   }
 }

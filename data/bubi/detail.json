@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "bubi",
-  "updated_at": "2026-10-06T00:07:53Z",
+  "updated_at": "2026-10-06T02:07:53Z",
   "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable",
   "disk": {
     "project_mb": 4684.9,
@@ -11,14 +11,14 @@
   "jobs": {
     "station_1min": {
       "last_ok_at": "2026-10-05T22:50:52Z",
-      "ok_last_24h": 0.9444,
-      "fail_last_24h": 64,
+      "ok_last_24h": 0.8611,
+      "fail_last_24h": 160,
       "n_stations": 701
     },
     "vehicle_5min": {
       "last_ok_at": "2026-10-05T22:47:52Z",
-      "ok_last_24h": 0.9444,
-      "fail_last_24h": 16,
+      "ok_last_24h": 0.8611,
+      "fail_last_24h": 40,
       "n_stations": 701,
       "n_vehicles": 154
     }
@@ -26,34 +26,25 @@
   "recent_polls": [
     {
       "job": "vehicle_5min",
-      "fetched_at": "2026-10-06T00:07:52Z",
+      "fetched_at": "2026-10-06T02:07:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
-      "duration_ms": 40,
+      "duration_ms": 42,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-06T00:06:52Z",
+      "fetched_at": "2026-10-06T02:06:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
-      "duration_ms": 75,
+      "duration_ms": 39,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-06T00:05:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 41,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-06T00:04:52Z",
+      "fetched_at": "2026-10-06T02:05:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
@@ -62,88 +53,7 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-06T00:03:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 41,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "vehicle_5min",
-      "fetched_at": "2026-10-06T00:02:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 41,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-06T00:01:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 43,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-06T00:00:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 50,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:59:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 53,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:58:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 41,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "vehicle_5min",
-      "fetched_at": "2026-10-05T23:57:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 45,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:56:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 52,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:55:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 44,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:54:52Z",
+      "fetched_at": "2026-10-06T02:04:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
@@ -152,70 +62,79 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:53:52Z",
+      "fetched_at": "2026-10-06T02:03:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
-      "duration_ms": 86,
+      "duration_ms": 40,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "vehicle_5min",
-      "fetched_at": "2026-10-05T23:52:52Z",
+      "fetched_at": "2026-10-06T02:02:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
-      "duration_ms": 43,
+      "duration_ms": 39,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:51:52Z",
+      "fetched_at": "2026-10-06T02:01:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
-      "duration_ms": 43,
+      "duration_ms": 39,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:50:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 49,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:49:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 53,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "station_1min",
-      "fetched_at": "2026-10-05T23:48:52Z",
-      "ok": false,
-      "n_stations": null,
-      "n_vehicles": null,
-      "duration_ms": 76,
-      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
-    },
-    {
-      "job": "vehicle_5min",
-      "fetched_at": "2026-10-05T23:47:52Z",
+      "fetched_at": "2026-10-06T02:00:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
       "duration_ms": 41,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:59:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 51,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:58:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 40,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "vehicle_5min",
+      "fetched_at": "2026-10-06T01:57:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 38,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:46:52Z",
+      "fetched_at": "2026-10-06T01:56:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 42,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:55:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
@@ -224,7 +143,7 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:45:52Z",
+      "fetched_at": "2026-10-06T01:54:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
@@ -233,11 +152,92 @@
     },
     {
       "job": "station_1min",
-      "fetched_at": "2026-10-05T23:44:52Z",
+      "fetched_at": "2026-10-06T01:53:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 39,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "vehicle_5min",
+      "fetched_at": "2026-10-06T01:52:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 152,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:51:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 42,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:50:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 39,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:49:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 44,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:48:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 43,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "vehicle_5min",
+      "fetched_at": "2026-10-06T01:47:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 75,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:46:52Z",
       "ok": false,
       "n_stations": null,
       "n_vehicles": null,
       "duration_ms": 41,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:45:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 38,
+      "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
+    },
+    {
+      "job": "station_1min",
+      "fetched_at": "2026-10-06T01:44:52Z",
+      "ok": false,
+      "n_stations": null,
+      "n_vehicles": null,
+      "duration_ms": 42,
       "error": "https://gbfs.urbansharing.com/molbubi.hu/station_status.json: HTTP Error 503: Service Unavailable"
     }
   ]

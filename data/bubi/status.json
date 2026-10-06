@@ -2,34 +2,34 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-10-05T22:07:54Z",
-  "health": "ok",
+  "updated_at": "2026-10-06T00:07:53Z",
+  "health": "down",
   "service": {
     "kind": "systemd",
     "name": "bubi-collector",
     "state": "active"
   },
-  "last_ok_at": "2026-10-05T22:07:52Z",
-  "last_error": null,
-  "ok_last_24h": 0.9979,
+  "last_ok_at": "2026-10-05T22:50:52Z",
+  "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable",
+  "ok_last_24h": 0.9444,
   "activity": {
     "kind": "poll",
-    "ok_24h": 1437,
-    "fail_24h": 3,
-    "ok_ever": 57783,
-    "fail_ever": 22
+    "ok_24h": 1360,
+    "fail_24h": 80,
+    "ok_ever": 57826,
+    "fail_ever": 99
   },
   "disk": {
-    "project_mb": 4682.5,
-    "sqlite_mb": 4042.1,
-    "raw_mb": 640.4,
-    "data_mb": 4682.6,
-    "total_mb": 4682.7
+    "project_mb": 4684.9,
+    "sqlite_mb": 4044.2,
+    "raw_mb": 640.7,
+    "data_mb": 4684.9,
+    "total_mb": 4685.1
   },
   "notes": {
     "n_stations": 701,
-    "n_vehicles": 150,
-    "last_station_at": "2026-10-05T22:06:52Z",
-    "last_vehicle_at": "2026-10-05T22:07:52Z"
+    "n_vehicles": 154,
+    "last_station_at": "2026-10-05T22:50:52Z",
+    "last_vehicle_at": "2026-10-05T22:47:52Z"
   }
 }

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-10-06T02:07:53Z",
+  "updated_at": "2026-10-06T04:07:53Z",
   "health": "down",
   "service": {
     "kind": "systemd",
@@ -11,13 +11,13 @@
   },
   "last_ok_at": "2026-10-05T22:50:52Z",
   "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: HTTP Error 503: Service Unavailable",
-  "ok_last_24h": 0.8611,
+  "ok_last_24h": 0.7778,
   "activity": {
     "kind": "poll",
-    "ok_24h": 1240,
-    "fail_24h": 200,
+    "ok_24h": 1120,
+    "fail_24h": 320,
     "ok_ever": 57826,
-    "fail_ever": 219
+    "fail_ever": 339
   },
   "disk": {
     "project_mb": 4684.9,

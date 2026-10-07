@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "flights",
   "name": "Repjegy",
-  "updated_at": "2026-10-07T10:10:07Z",
+  "updated_at": "2026-10-07T12:10:08Z",
   "health": "unknown",
   "service": {
     "kind": "cron",

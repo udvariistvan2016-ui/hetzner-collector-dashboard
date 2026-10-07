@@ -2,37 +2,37 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-10-06T18:02:59Z",
-  "health": "degraded",
+  "updated_at": "2026-10-07T06:04:22Z",
+  "health": "ok",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-10-06T18:02:58Z",
-  "last_error": "methu/pecs: met.hu: üres táblázat (Pécs)",
+  "last_ok_at": "2026-10-07T06:04:21Z",
+  "last_error": null,
   "ok_last_24h": 0.667,
   "activity": {
     "kind": "run",
     "ok_24h": 2,
     "fail_24h": 1,
-    "ok_ever": 125,
+    "ok_ever": 126,
     "fail_ever": 1
   },
   "disk": {
-    "project_mb": 1726.6,
-    "sqlite_mb": 109.4,
-    "raw_mb": 1617.1,
-    "data_mb": 1726.6,
-    "total_mb": 1779.7
+    "project_mb": 1733.4,
+    "sqlite_mb": 110.5,
+    "raw_mb": 1622.9,
+    "data_mb": 1733.4,
+    "total_mb": 1786.6
   },
   "notes": {
     "n_locations": 15,
-    "forecast_n": 225164,
+    "forecast_n": 227761,
     "obs_n": 86372,
-    "last_forecast": "2026-10-06T18:02:58Z",
+    "last_forecast": "2026-10-07T06:04:21Z",
     "last_obs": "2026-10-06T08:20:11Z",
-    "last_forecast_status": "partial",
+    "last_forecast_status": "ok",
     "last_obs_status": "ok"
   }
 }

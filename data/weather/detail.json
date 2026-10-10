@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "id": "weather",
-  "updated_at": "2026-10-10T08:20:12Z",
+  "updated_at": "2026-10-10T18:02:41Z",
   "timezone": "Europe/Budapest",
   "counts": {
-    "forecast_n": 243712,
+    "forecast_n": 246469,
     "obs_n": 87620,
     "daily_n": 3666,
     "n_locations": 15
@@ -14,9 +14,9 @@
       "id": "budaors",
       "name": "Budaörs",
       "kind": "interest",
-      "last_forecast": "2026-10-10T06:00:19Z",
+      "last_forecast": "2026-10-10T18:00:27Z",
       "last_obs": null,
-      "forecast_rows": 12729,
+      "forecast_rows": 12909,
       "obs_rows": 0,
       "last_error": null
     },
@@ -24,9 +24,9 @@
       "id": "balatonalmadi",
       "name": "Balatonalmádi",
       "kind": "interest",
-      "last_forecast": "2026-10-10T06:00:51Z",
+      "last_forecast": "2026-10-10T18:00:51Z",
       "last_obs": null,
-      "forecast_rows": 16348,
+      "forecast_rows": 16535,
       "obs_rows": 0,
       "last_error": null
     },
@@ -34,9 +34,9 @@
       "id": "kenese",
       "name": "Balatonkenese",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:16Z",
+      "last_forecast": "2026-10-10T18:02:04Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16644,
+      "forecast_rows": 16831,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -44,9 +44,9 @@
       "id": "lagymanyos",
       "name": "Budapest Lágymányos",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:01:16Z",
+      "last_forecast": "2026-10-10T18:01:07Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16430,
+      "forecast_rows": 16615,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -54,9 +54,9 @@
       "id": "budapest",
       "name": "Budapest Újpest",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:02:12Z",
+      "last_forecast": "2026-10-10T18:01:32Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16462,
+      "forecast_rows": 16647,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -64,9 +64,9 @@
       "id": "debrecen",
       "name": "Debrecen repülőtér",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:51Z",
+      "last_forecast": "2026-10-10T18:02:28Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16463,
+      "forecast_rows": 16648,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -74,9 +74,9 @@
       "id": "gyor",
       "name": "Győr Egyetem",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:04:06Z",
+      "last_forecast": "2026-10-10T18:02:40Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16645,
+      "forecast_rows": 16832,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -84,19 +84,19 @@
       "id": "miskolc",
       "name": "Miskolc Diósgyőr",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:44Z",
+      "last_forecast": "2026-10-10T18:02:22Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16462,
+      "forecast_rows": 16624,
       "obs_rows": 6744,
-      "last_error": null
+      "last_error": "idokep/miskolc: Server error '502 Bad Gateway' for url 'https://www.idokep.hu/elorejelzes/Miskolc' For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
     },
     {
       "id": "napkor",
       "name": "Napkor",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:02:46Z",
+      "last_forecast": "2026-10-10T18:01:48Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16462,
+      "forecast_rows": 16647,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -104,9 +104,9 @@
       "id": "nyiregyhaza",
       "name": "Nyíregyháza repülőtér",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:02:32Z",
+      "last_forecast": "2026-10-10T18:01:40Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16433,
+      "forecast_rows": 16618,
       "obs_rows": 6692,
       "last_error": null
     },
@@ -114,9 +114,9 @@
       "id": "pecs",
       "name": "Pécs Egyetem",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:58Z",
+      "last_forecast": "2026-10-10T18:02:34Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16456,
+      "forecast_rows": 16641,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -124,9 +124,9 @@
       "id": "siofok",
       "name": "Siófok",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:29Z",
+      "last_forecast": "2026-10-10T18:02:10Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16644,
+      "forecast_rows": 16831,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -134,9 +134,9 @@
       "id": "szeged",
       "name": "Szeged belterület",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:37Z",
+      "last_forecast": "2026-10-10T18:02:16Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16462,
+      "forecast_rows": 16647,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -144,9 +144,9 @@
       "id": "szabadja",
       "name": "Szentkirályszabadja repülőtér",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:03:01Z",
+      "last_forecast": "2026-10-10T18:01:56Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16644,
+      "forecast_rows": 16831,
       "obs_rows": 6744,
       "last_error": null
     },
@@ -154,9 +154,9 @@
       "id": "erd_ofalu",
       "name": "Érd Ófalu",
       "kind": "station",
-      "last_forecast": "2026-10-10T06:01:46Z",
+      "last_forecast": "2026-10-10T18:01:21Z",
       "last_obs": "2026-10-08T23:00:00Z",
-      "forecast_rows": 16428,
+      "forecast_rows": 16613,
       "obs_rows": 6744,
       "last_error": null
     }
@@ -166,32 +166,32 @@
       "provider": "idokep",
       "label": "Időkép",
       "products": 1,
-      "rows": 31395,
-      "last_issued": "2026-10-10T06:04:05Z",
-      "last_error": null
+      "rows": 31717,
+      "last_issued": "2026-10-10T18:02:39Z",
+      "last_error": "idokep/miskolc: Server error '502 Bad Gateway' for url 'https://www.idokep.hu/elorejelzes/Miskolc' For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
     },
     {
       "provider": "met_norway",
       "label": "MET Norway",
       "products": 1,
-      "rows": 14340,
-      "last_issued": "2026-10-10T06:04:04Z",
+      "rows": 14505,
+      "last_issued": "2026-10-10T18:02:39Z",
       "last_error": null
     },
     {
       "provider": "methu",
       "label": "met.hu",
       "products": 1,
-      "rows": 9548,
-      "last_issued": "2026-10-10T06:04:06Z",
+      "rows": 9653,
+      "last_issued": "2026-10-10T18:02:40Z",
       "last_error": null
     },
     {
       "provider": "open_meteo",
       "label": "Open-Meteo",
       "products": 15,
-      "rows": 188429,
-      "last_issued": "2026-10-10T06:04:04Z",
+      "rows": 190594,
+      "last_issued": "2026-10-10T18:02:38Z",
       "last_error": null
     },
     {
@@ -204,6 +204,17 @@
     }
   ],
   "runs": [
+    {
+      "started_at": "2026-10-10T18:00:02Z",
+      "finished_at": "2026-10-10T18:02:40Z",
+      "kind": "forecasts",
+      "slot": "evening",
+      "status": "partial",
+      "duration_s": 158,
+      "ok_n": 258,
+      "error_n": 1,
+      "error": "idokep/miskolc: Server error '502 Bad Gateway' for url 'https://www.idokep.hu/elorejelzes/Miskolc' For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+    },
     {
       "started_at": "2026-10-10T08:20:01Z",
       "finished_at": "2026-10-10T08:20:11Z",
@@ -630,17 +641,6 @@
       "status": "ok",
       "duration_s": 114,
       "ok_n": 258,
-      "error_n": 0,
-      "error": null
-    },
-    {
-      "started_at": "2026-09-27T08:20:01Z",
-      "finished_at": "2026-09-27T08:20:10Z",
-      "kind": "observations",
-      "slot": "archive",
-      "status": "ok",
-      "duration_s": 9,
-      "ok_n": 13,
       "error_n": 0,
       "error": null
     }

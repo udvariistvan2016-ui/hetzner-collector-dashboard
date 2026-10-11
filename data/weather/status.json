@@ -2,37 +2,37 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-10-10T18:02:41Z",
-  "health": "degraded",
+  "updated_at": "2026-10-11T06:03:10Z",
+  "health": "ok",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-10-10T18:02:40Z",
-  "last_error": "idokep/miskolc: Server error '502 Bad Gateway' for url 'https://www.idokep.hu/elorejelzes/Miskolc' For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
+  "last_ok_at": "2026-10-11T06:03:09Z",
+  "last_error": null,
   "ok_last_24h": 0.75,
   "activity": {
     "kind": "run",
     "ok_24h": 3,
     "fail_24h": 1,
-    "ok_ever": 136,
+    "ok_ever": 137,
     "fail_ever": 2
   },
   "disk": {
-    "project_mb": 1900.4,
-    "sqlite_mb": 118.5,
-    "raw_mb": 1781.8,
-    "data_mb": 1900.4,
-    "total_mb": 1953.6
+    "project_mb": 1907.2,
+    "sqlite_mb": 119.5,
+    "raw_mb": 1787.6,
+    "data_mb": 1907.2,
+    "total_mb": 1960.4
   },
   "notes": {
     "n_locations": 15,
-    "forecast_n": 246469,
+    "forecast_n": 249065,
     "obs_n": 87620,
-    "last_forecast": "2026-10-10T18:02:40Z",
+    "last_forecast": "2026-10-11T06:03:09Z",
     "last_obs": "2026-10-10T08:20:11Z",
-    "last_forecast_status": "partial",
+    "last_forecast_status": "ok",
     "last_obs_status": "ok"
   }
 }

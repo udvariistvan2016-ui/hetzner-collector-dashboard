@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "aldi-lidl",
   "name": "Aldi vs Lidl",
-  "updated_at": "2026-10-29T03:10:03Z",
+  "updated_at": "2026-10-29T05:10:01Z",
   "health": "ok",
   "service": {
     "kind": "cron",

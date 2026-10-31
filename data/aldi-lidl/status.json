@@ -2,14 +2,14 @@
   "schema_version": 1,
   "id": "aldi-lidl",
   "name": "Aldi vs Lidl",
-  "updated_at": "2026-10-31T07:10:03Z",
+  "updated_at": "2026-10-31T09:10:03Z",
   "health": "ok",
   "service": {
     "kind": "cron",
     "name": "arfigyelo",
     "state": "unknown"
   },
-  "last_ok_at": "2026-10-30T19:32:23Z",
+  "last_ok_at": "2026-10-31T07:32:15Z",
   "last_error": null,
   "ok_last_24h": 1.0,
   "activity": {
@@ -31,7 +31,7 @@
     "chains": 2,
     "observed_on": "2026-10-30",
     "n_products": 1367,
-    "n_obs": 10850,
+    "n_obs": 10857,
     "last_ingest_status": "success"
   }
 }

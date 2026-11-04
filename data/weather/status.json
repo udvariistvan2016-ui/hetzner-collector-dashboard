@@ -2,37 +2,37 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-11-03T19:01:51Z",
-  "health": "ok",
+  "updated_at": "2026-11-04T07:02:02Z",
+  "health": "degraded",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-03T19:01:48Z",
-  "last_error": null,
-  "ok_last_24h": 1.0,
+  "last_ok_at": "2026-11-04T07:01:58Z",
+  "last_error": "met_norway/lagymanyos: Unterminated string starting at: line 1 column 39418 (char 39417); met_norway/nyiregyhaza: Unterminated string starting at: line 1 column 36641 (char 36640); met_norway/gyor: U…",
+  "ok_last_24h": 0.667,
   "activity": {
     "kind": "run",
-    "ok_24h": 3,
-    "fail_24h": 0,
+    "ok_24h": 2,
+    "fail_24h": 1,
     "ok_ever": 208,
-    "fail_ever": 2
+    "fail_ever": 3
   },
   "disk": {
-    "project_mb": 2975.3,
-    "sqlite_mb": 172.9,
-    "raw_mb": 2802.2,
-    "data_mb": 2975.4,
-    "total_mb": 3028.5
+    "project_mb": 2981.9,
+    "sqlite_mb": 174.1,
+    "raw_mb": 2807.7,
+    "data_mb": 2981.9,
+    "total_mb": 3035.1
   },
   "notes": {
     "n_locations": 15,
-    "forecast_n": 374698,
+    "forecast_n": 377348,
     "obs_n": 95108,
-    "last_forecast": "2026-11-03T19:01:48Z",
+    "last_forecast": "2026-11-04T07:01:58Z",
     "last_obs": "2026-11-03T09:20:13Z",
-    "last_forecast_status": "ok",
+    "last_forecast_status": "partial",
     "last_obs_status": "ok"
   }
 }

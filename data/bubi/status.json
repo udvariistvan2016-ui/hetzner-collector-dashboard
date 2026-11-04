@@ -2,34 +2,34 @@
   "schema_version": 1,
   "id": "bubi",
   "name": "MOL Bubi",
-  "updated_at": "2026-11-04T13:09:20Z",
-  "health": "ok",
+  "updated_at": "2026-11-04T15:09:50Z",
+  "health": "degraded",
   "service": {
     "kind": "systemd",
     "name": "bubi-collector",
     "state": "active"
   },
-  "last_ok_at": "2026-11-04T13:08:52Z",
-  "last_error": null,
-  "ok_last_24h": 0.9993,
+  "last_ok_at": "2026-11-04T15:06:52Z",
+  "last_error": "https://gbfs.urbansharing.com/molbubi.hu/gbfs.json: <urlopen error timed out>",
+  "ok_last_24h": 0.9972,
   "activity": {
     "kind": "poll",
-    "ok_24h": 1439,
-    "fail_24h": 1,
-    "ok_ever": 100028,
-    "fail_ever": 438
+    "ok_24h": 1436,
+    "fail_24h": 4,
+    "ok_ever": 100145,
+    "fail_ever": 441
   },
   "disk": {
-    "project_mb": 7372.9,
-    "sqlite_mb": 6221.9,
-    "raw_mb": 1151.0,
-    "data_mb": 7372.9,
-    "total_mb": 7373.1
+    "project_mb": 7378.9,
+    "sqlite_mb": 6227.2,
+    "raw_mb": 1151.7,
+    "data_mb": 7378.9,
+    "total_mb": 7379.1
   },
   "notes": {
     "n_stations": 700,
-    "n_vehicles": 62,
-    "last_station_at": "2026-11-04T13:07:52Z",
-    "last_vehicle_at": "2026-11-04T13:08:52Z"
+    "n_vehicles": 86,
+    "last_station_at": "2026-11-04T15:06:52Z",
+    "last_vehicle_at": "2026-11-04T14:58:52Z"
   }
 }

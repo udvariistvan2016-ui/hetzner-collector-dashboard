@@ -2,35 +2,35 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-11-04T09:20:16Z",
+  "updated_at": "2026-11-04T19:01:46Z",
   "health": "degraded",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-04T09:20:13Z",
-  "last_error": "met_norway/lagymanyos: Unterminated string starting at: line 1 column 39418 (char 39417); met_norway/nyiregyhaza: Unterminated string starting at: line 1 column 36641 (char 36640); met_norway/gyor: U…",
-  "ok_last_24h": 0.667,
+  "last_ok_at": "2026-11-04T19:01:43Z",
+  "last_error": "met_norway/lagymanyos: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.4747&lon=19.0619' For more information check: https://develop…",
+  "ok_last_24h": 0.5,
   "activity": {
     "kind": "run",
     "ok_24h": 2,
-    "fail_24h": 1,
+    "fail_24h": 2,
     "ok_ever": 209,
-    "fail_ever": 3
+    "fail_ever": 4
   },
   "disk": {
-    "project_mb": 3014.3,
-    "sqlite_mb": 174.1,
-    "raw_mb": 2840.0,
-    "data_mb": 3014.3,
-    "total_mb": 3067.5
+    "project_mb": 3020.4,
+    "sqlite_mb": 175.2,
+    "raw_mb": 2845.1,
+    "data_mb": 3020.4,
+    "total_mb": 3073.6
   },
   "notes": {
     "n_locations": 15,
-    "forecast_n": 377348,
+    "forecast_n": 380034,
     "obs_n": 95420,
-    "last_forecast": "2026-11-04T07:01:58Z",
+    "last_forecast": "2026-11-04T19:01:43Z",
     "last_obs": "2026-11-04T09:20:13Z",
     "last_forecast_status": "partial",
     "last_obs_status": "ok"

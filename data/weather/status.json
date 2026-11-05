@@ -2,35 +2,35 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-11-04T19:01:46Z",
+  "updated_at": "2026-11-05T07:01:49Z",
   "health": "degraded",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-04T19:01:43Z",
-  "last_error": "met_norway/lagymanyos: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.4747&lon=19.0619' For more information check: https://develop…",
-  "ok_last_24h": 0.5,
+  "last_ok_at": "2026-11-05T07:01:47Z",
+  "last_error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…",
+  "ok_last_24h": 0.25,
   "activity": {
     "kind": "run",
-    "ok_24h": 2,
-    "fail_24h": 2,
+    "ok_24h": 1,
+    "fail_24h": 3,
     "ok_ever": 209,
-    "fail_ever": 4
+    "fail_ever": 5
   },
   "disk": {
-    "project_mb": 3020.4,
-    "sqlite_mb": 175.2,
-    "raw_mb": 2845.1,
-    "data_mb": 3020.5,
-    "total_mb": 3073.6
+    "project_mb": 3026.9,
+    "sqlite_mb": 176.4,
+    "raw_mb": 2850.4,
+    "data_mb": 3026.9,
+    "total_mb": 3080.1
   },
   "notes": {
     "n_locations": 15,
-    "forecast_n": 380034,
+    "forecast_n": 382664,
     "obs_n": 95420,
-    "last_forecast": "2026-11-04T19:01:43Z",
+    "last_forecast": "2026-11-05T07:01:47Z",
     "last_obs": "2026-11-04T09:20:13Z",
     "last_forecast_status": "partial",
     "last_obs_status": "ok"

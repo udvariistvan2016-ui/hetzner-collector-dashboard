@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "id": "weather",
-  "updated_at": "2026-11-04T19:01:46Z",
+  "updated_at": "2026-11-05T07:01:49Z",
   "timezone": "Europe/Budapest",
   "counts": {
-    "forecast_n": 380034,
+    "forecast_n": 382664,
     "obs_n": 95420,
     "daily_n": 3991,
     "n_locations": 15
@@ -14,9 +14,9 @@
       "id": "budaors",
       "name": "Budaörs",
       "kind": "interest",
-      "last_forecast": "2026-11-04T19:00:12Z",
+      "last_forecast": "2026-11-05T07:00:13Z",
       "last_obs": null,
-      "forecast_rows": 20821,
+      "forecast_rows": 20999,
       "obs_rows": 0,
       "last_error": null
     },
@@ -24,39 +24,39 @@
       "id": "balatonalmadi",
       "name": "Balatonalmádi",
       "kind": "interest",
-      "last_forecast": "2026-11-04T19:00:19Z",
+      "last_forecast": "2026-11-05T07:00:20Z",
       "last_obs": null,
-      "forecast_rows": 25343,
+      "forecast_rows": 25513,
       "obs_rows": 0,
-      "last_error": null
+      "last_error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…"
     },
     {
       "id": "kenese",
       "name": "Balatonkenese",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:05Z",
+      "last_forecast": "2026-11-05T07:01:08Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25946,
+      "forecast_rows": 26126,
       "obs_rows": 7344,
-      "last_error": "met_norway/kenese: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.025&lon=18.1281' For more information check: https://developer.mo…"
+      "last_error": null
     },
     {
       "id": "lagymanyos",
       "name": "Budapest Lágymányos",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:25Z",
+      "last_forecast": "2026-11-05T07:00:27Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25341,
+      "forecast_rows": 25519,
       "obs_rows": 7344,
-      "last_error": "met_norway/lagymanyos: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.4747&lon=19.0619' For more information check: https://develop…"
+      "last_error": null
     },
     {
       "id": "budapest",
       "name": "Budapest Újpest",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:38Z",
+      "last_forecast": "2026-11-05T07:00:39Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25634,
+      "forecast_rows": 25802,
       "obs_rows": 7344,
       "last_error": "met_norway/budapest: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.5733&lon=19.075' For more information check: https://developer.…"
     },
@@ -64,39 +64,39 @@
       "id": "debrecen",
       "name": "Debrecen repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:31Z",
+      "last_forecast": "2026-11-05T07:01:34Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25601,
+      "forecast_rows": 25769,
       "obs_rows": 7344,
-      "last_error": null
+      "last_error": "met_norway/debrecen: Unterminated string starting at: line 1 column 56209 (char 56208)"
     },
     {
       "id": "gyor",
       "name": "Győr Egyetem",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:43Z",
+      "last_forecast": "2026-11-05T07:01:47Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25880,
+      "forecast_rows": 26060,
       "obs_rows": 7344,
-      "last_error": "met_norway/gyor: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.6931&lon=17.6275' For more information check: https://developer.moz…"
+      "last_error": null
     },
     {
       "id": "miskolc",
       "name": "Miskolc Diósgyőr",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:24Z",
+      "last_forecast": "2026-11-05T07:01:28Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25545,
+      "forecast_rows": 25723,
       "obs_rows": 7344,
-      "last_error": "met_norway/miskolc: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=48.0947&lon=20.7267' For more information check: https://developer.…"
+      "last_error": null
     },
     {
       "id": "napkor",
       "name": "Napkor",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:51Z",
+      "last_forecast": "2026-11-05T07:00:53Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25629,
+      "forecast_rows": 25807,
       "obs_rows": 7344,
       "last_error": null
     },
@@ -104,9 +104,9 @@
       "id": "nyiregyhaza",
       "name": "Nyíregyháza repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:44Z",
+      "last_forecast": "2026-11-05T07:00:45Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25611,
+      "forecast_rows": 25789,
       "obs_rows": 7292,
       "last_error": null
     },
@@ -114,49 +114,49 @@
       "id": "pecs",
       "name": "Pécs Egyetem",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:37Z",
+      "last_forecast": "2026-11-05T07:01:41Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25617,
+      "forecast_rows": 25795,
       "obs_rows": 7344,
-      "last_error": "met_norway/pecs: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=46.0778&lon=18.2072' For more information check: https://developer.moz…"
+      "last_error": null
     },
     {
       "id": "siofok",
       "name": "Siófok",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:11Z",
+      "last_forecast": "2026-11-05T07:01:16Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25946,
+      "forecast_rows": 26126,
       "obs_rows": 7344,
-      "last_error": "met_norway/siofok: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=46.9108&lon=18.0408' For more information check: https://developer.m…"
+      "last_error": null
     },
     {
       "id": "szeged",
       "name": "Szeged belterület",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:01:18Z",
+      "last_forecast": "2026-11-05T07:01:22Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25658,
+      "forecast_rows": 25826,
       "obs_rows": 7344,
-      "last_error": null
+      "last_error": "met_norway/szeged: Unterminated string starting at: line 1 column 41608 (char 41607)"
     },
     {
       "id": "szabadja",
       "name": "Szentkirályszabadja repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:58Z",
+      "last_forecast": "2026-11-05T07:01:00Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25939,
+      "forecast_rows": 26119,
       "obs_rows": 7344,
-      "last_error": "met_norway/szabadja: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.0828&lon=17.9706' For more information check: https://developer…"
+      "last_error": null
     },
     {
       "id": "erd_ofalu",
       "name": "Érd Ófalu",
       "kind": "station",
-      "last_forecast": "2026-11-04T19:00:32Z",
+      "last_forecast": "2026-11-05T07:00:33Z",
       "last_obs": "2026-11-02T23:00:00Z",
-      "forecast_rows": 25523,
+      "forecast_rows": 25691,
       "obs_rows": 7344,
       "last_error": "met_norway/erd_ofalu: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.3619&lon=18.9417' For more information check: https://develope…"
     }
@@ -166,32 +166,32 @@
       "provider": "idokep",
       "label": "Időkép",
       "products": 1,
-      "rows": 48967,
-      "last_issued": "2026-11-04T19:01:42Z",
+      "rows": 49312,
+      "last_issued": "2026-11-05T07:01:46Z",
       "last_error": null
     },
     {
       "provider": "met_norway",
       "label": "MET Norway",
       "products": 1,
-      "rows": 22251,
-      "last_issued": "2026-11-04T19:01:30Z",
-      "last_error": "met_norway/lagymanyos: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.4747&lon=19.0619' For more information check: https://develop…"
+      "rows": 22351,
+      "last_issued": "2026-11-05T07:01:46Z",
+      "last_error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…"
     },
     {
       "provider": "methu",
       "label": "met.hu",
       "products": 1,
-      "rows": 14903,
-      "last_issued": "2026-11-04T19:01:43Z",
+      "rows": 15008,
+      "last_issued": "2026-11-05T07:01:47Z",
       "last_error": null
     },
     {
       "provider": "open_meteo",
       "label": "Open-Meteo",
       "products": 15,
-      "rows": 293913,
-      "last_issued": "2026-11-04T19:01:41Z",
+      "rows": 295993,
+      "last_issued": "2026-11-05T07:01:45Z",
       "last_error": null
     },
     {
@@ -204,6 +204,17 @@
     }
   ],
   "runs": [
+    {
+      "started_at": "2026-11-05T07:00:01Z",
+      "finished_at": "2026-11-05T07:01:47Z",
+      "kind": "forecasts",
+      "slot": "morning",
+      "status": "partial",
+      "duration_s": 106,
+      "ok_n": 255,
+      "error_n": 5,
+      "error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…"
+    },
     {
       "started_at": "2026-11-04T19:00:02Z",
       "finished_at": "2026-11-04T19:01:43Z",
@@ -629,17 +640,6 @@
       "slot": "morning",
       "status": "ok",
       "duration_s": 109,
-      "ok_n": 260,
-      "error_n": 0,
-      "error": null
-    },
-    {
-      "started_at": "2026-10-22T18:00:01Z",
-      "finished_at": "2026-10-22T18:01:47Z",
-      "kind": "forecasts",
-      "slot": "evening",
-      "status": "ok",
-      "duration_s": 106,
       "ok_n": 260,
       "error_n": 0,
       "error": null

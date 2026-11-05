@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "id": "weather",
-  "updated_at": "2026-11-05T09:20:12Z",
+  "updated_at": "2026-11-05T19:01:43Z",
   "timezone": "Europe/Budapest",
   "counts": {
-    "forecast_n": 382664,
+    "forecast_n": 385449,
     "obs_n": 95732,
     "daily_n": 4004,
     "n_locations": 15
@@ -14,9 +14,9 @@
       "id": "budaors",
       "name": "Budaörs",
       "kind": "interest",
-      "last_forecast": "2026-11-05T07:00:13Z",
+      "last_forecast": "2026-11-05T19:00:12Z",
       "last_obs": null,
-      "forecast_rows": 20999,
+      "forecast_rows": 21184,
       "obs_rows": 0,
       "last_error": null
     },
@@ -24,19 +24,19 @@
       "id": "balatonalmadi",
       "name": "Balatonalmádi",
       "kind": "interest",
-      "last_forecast": "2026-11-05T07:00:20Z",
+      "last_forecast": "2026-11-05T19:00:19Z",
       "last_obs": null,
-      "forecast_rows": 25513,
+      "forecast_rows": 25700,
       "obs_rows": 0,
-      "last_error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…"
+      "last_error": null
     },
     {
       "id": "kenese",
       "name": "Balatonkenese",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:08Z",
+      "last_forecast": "2026-11-05T19:01:04Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 26126,
+      "forecast_rows": 26313,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -44,9 +44,9 @@
       "id": "lagymanyos",
       "name": "Budapest Lágymányos",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:00:27Z",
+      "last_forecast": "2026-11-05T19:00:25Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25519,
+      "forecast_rows": 25704,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -54,29 +54,29 @@
       "id": "budapest",
       "name": "Budapest Újpest",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:00:39Z",
+      "last_forecast": "2026-11-05T19:00:39Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25802,
+      "forecast_rows": 25987,
       "obs_rows": 7368,
-      "last_error": "met_norway/budapest: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.5733&lon=19.075' For more information check: https://developer.…"
+      "last_error": null
     },
     {
       "id": "debrecen",
       "name": "Debrecen repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:34Z",
+      "last_forecast": "2026-11-05T19:01:29Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25769,
+      "forecast_rows": 25954,
       "obs_rows": 7368,
-      "last_error": "met_norway/debrecen: Unterminated string starting at: line 1 column 56209 (char 56208)"
+      "last_error": null
     },
     {
       "id": "gyor",
       "name": "Győr Egyetem",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:47Z",
+      "last_forecast": "2026-11-05T19:01:42Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 26060,
+      "forecast_rows": 26247,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -84,9 +84,9 @@
       "id": "miskolc",
       "name": "Miskolc Diósgyőr",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:28Z",
+      "last_forecast": "2026-11-05T19:01:23Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25723,
+      "forecast_rows": 25908,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -94,9 +94,9 @@
       "id": "napkor",
       "name": "Napkor",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:00:53Z",
+      "last_forecast": "2026-11-05T19:00:52Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25807,
+      "forecast_rows": 25992,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -104,9 +104,9 @@
       "id": "nyiregyhaza",
       "name": "Nyíregyháza repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:00:45Z",
+      "last_forecast": "2026-11-05T19:00:45Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25789,
+      "forecast_rows": 25974,
       "obs_rows": 7316,
       "last_error": null
     },
@@ -114,9 +114,9 @@
       "id": "pecs",
       "name": "Pécs Egyetem",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:41Z",
+      "last_forecast": "2026-11-05T19:01:36Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25795,
+      "forecast_rows": 25980,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -124,9 +124,9 @@
       "id": "siofok",
       "name": "Siófok",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:16Z",
+      "last_forecast": "2026-11-05T19:01:11Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 26126,
+      "forecast_rows": 26313,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -134,19 +134,19 @@
       "id": "szeged",
       "name": "Szeged belterület",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:22Z",
+      "last_forecast": "2026-11-05T19:01:17Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25826,
+      "forecast_rows": 26011,
       "obs_rows": 7368,
-      "last_error": "met_norway/szeged: Unterminated string starting at: line 1 column 41608 (char 41607)"
+      "last_error": null
     },
     {
       "id": "szabadja",
       "name": "Szentkirályszabadja repülőtér",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:01:00Z",
+      "last_forecast": "2026-11-05T19:00:58Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 26119,
+      "forecast_rows": 26306,
       "obs_rows": 7368,
       "last_error": null
     },
@@ -154,11 +154,11 @@
       "id": "erd_ofalu",
       "name": "Érd Ófalu",
       "kind": "station",
-      "last_forecast": "2026-11-05T07:00:33Z",
+      "last_forecast": "2026-11-05T19:00:31Z",
       "last_obs": "2026-11-03T23:00:00Z",
-      "forecast_rows": 25691,
+      "forecast_rows": 25876,
       "obs_rows": 7368,
-      "last_error": "met_norway/erd_ofalu: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.3619&lon=18.9417' For more information check: https://develope…"
+      "last_error": null
     }
   ],
   "sources": [
@@ -166,32 +166,32 @@
       "provider": "idokep",
       "label": "Időkép",
       "products": 1,
-      "rows": 49312,
-      "last_issued": "2026-11-05T07:01:46Z",
+      "rows": 49657,
+      "last_issued": "2026-11-05T19:01:41Z",
       "last_error": null
     },
     {
       "provider": "met_norway",
       "label": "MET Norway",
       "products": 1,
-      "rows": 22351,
-      "last_issued": "2026-11-05T07:01:46Z",
-      "last_error": "met_norway/balatonalmadi: Server error '503 Service Unavailable' for url 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=47.035&lon=18.021' For more information check: https://develo…"
+      "rows": 22516,
+      "last_issued": "2026-11-05T19:01:41Z",
+      "last_error": null
     },
     {
       "provider": "methu",
       "label": "met.hu",
       "products": 1,
-      "rows": 15008,
-      "last_issued": "2026-11-05T07:01:47Z",
+      "rows": 15113,
+      "last_issued": "2026-11-05T19:01:42Z",
       "last_error": null
     },
     {
       "provider": "open_meteo",
       "label": "Open-Meteo",
       "products": 15,
-      "rows": 295993,
-      "last_issued": "2026-11-05T07:01:45Z",
+      "rows": 298163,
+      "last_issued": "2026-11-05T19:01:40Z",
       "last_error": null
     },
     {
@@ -204,6 +204,17 @@
     }
   ],
   "runs": [
+    {
+      "started_at": "2026-11-05T19:00:02Z",
+      "finished_at": "2026-11-05T19:01:42Z",
+      "kind": "forecasts",
+      "slot": "evening",
+      "status": "ok",
+      "duration_s": 100,
+      "ok_n": 260,
+      "error_n": 0,
+      "error": null
+    },
     {
       "started_at": "2026-11-05T09:20:01Z",
       "finished_at": "2026-11-05T09:20:11Z",
@@ -630,17 +641,6 @@
       "status": "ok",
       "duration_s": 105,
       "ok_n": 260,
-      "error_n": 0,
-      "error": null
-    },
-    {
-      "started_at": "2026-10-23T08:20:02Z",
-      "finished_at": "2026-10-23T08:20:11Z",
-      "kind": "observations",
-      "slot": "archive",
-      "status": "ok",
-      "duration_s": 9,
-      "ok_n": 13,
       "error_n": 0,
       "error": null
     }

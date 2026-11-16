@@ -2,14 +2,14 @@
   "schema_version": 1,
   "id": "aldi-lidl",
   "name": "Aldi vs Lidl",
-  "updated_at": "2026-11-16T07:10:03Z",
+  "updated_at": "2026-11-16T09:10:03Z",
   "health": "ok",
   "service": {
     "kind": "cron",
     "name": "arfigyelo",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-15T19:32:13Z",
+  "last_ok_at": "2026-11-16T07:32:41Z",
   "last_error": null,
   "ok_last_24h": 1.0,
   "activity": {
@@ -20,8 +20,8 @@
     "fail_ever": 0
   },
   "disk": {
-    "total_mb": 261.4,
-    "data_mb": 184.2,
+    "total_mb": 263.5,
+    "data_mb": 186.2,
     "project_mb": 0,
     "sqlite_mb": 0,
     "raw_mb": 0
@@ -29,9 +29,9 @@
   "notes": {
     "source": "GVH Árfigyelő",
     "chains": 2,
-    "observed_on": "2026-11-15",
+    "observed_on": "2026-11-16",
     "n_products": 1376,
-    "n_obs": 5421,
+    "n_obs": 5407,
     "last_ingest_status": "success"
   }
 }

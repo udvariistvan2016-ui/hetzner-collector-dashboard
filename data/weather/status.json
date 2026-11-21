@@ -2,36 +2,36 @@
   "schema_version": 1,
   "id": "weather",
   "name": "Időjárás",
-  "updated_at": "2026-11-21T07:01:44Z",
+  "updated_at": "2026-11-21T09:20:13Z",
   "health": "ok",
   "service": {
     "kind": "cron",
     "name": "weathercollect",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-21T07:01:41Z",
+  "last_ok_at": "2026-11-21T09:20:11Z",
   "last_error": null,
   "ok_last_24h": 1.0,
   "activity": {
     "kind": "run",
-    "ok_24h": 3,
+    "ok_24h": 4,
     "fail_24h": 0,
-    "ok_ever": 256,
+    "ok_ever": 257,
     "fail_ever": 6
   },
   "disk": {
-    "project_mb": 3781.6,
+    "project_mb": 3815.8,
     "sqlite_mb": 213.5,
-    "raw_mb": 3567.9,
-    "data_mb": 3781.6,
-    "total_mb": 3834.7
+    "raw_mb": 3602.0,
+    "data_mb": 3815.8,
+    "total_mb": 3868.9
   },
   "notes": {
     "n_locations": 15,
     "forecast_n": 469870,
-    "obs_n": 100412,
+    "obs_n": 100724,
     "last_forecast": "2026-11-21T07:01:41Z",
-    "last_obs": "2026-11-20T09:20:13Z",
+    "last_obs": "2026-11-21T09:20:11Z",
     "last_forecast_status": "ok",
     "last_obs_status": "ok"
   }

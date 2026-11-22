@@ -2,14 +2,14 @@
   "schema_version": 1,
   "id": "aldi-lidl",
   "name": "Aldi vs Lidl",
-  "updated_at": "2026-11-22T07:10:03Z",
+  "updated_at": "2026-11-22T09:10:03Z",
   "health": "ok",
   "service": {
     "kind": "cron",
     "name": "arfigyelo",
     "state": "unknown"
   },
-  "last_ok_at": "2026-11-21T19:32:08Z",
+  "last_ok_at": "2026-11-22T07:32:09Z",
   "last_error": null,
   "ok_last_24h": 1.0,
   "activity": {
